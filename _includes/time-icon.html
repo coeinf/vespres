@@ -1,0 +1,7 @@
+{% assign date = include.date %}
+
+<time datetime="2014-09-20" class="icon">
+  <em>{% include date-weekday.html date=date %}</em>
+  <strong>{% include date-month.html date=date %}</strong>
+  <span>{{date | date:'%-d'}}</span>
+</time>

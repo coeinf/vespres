@@ -1,0 +1,10 @@
+{% assign friend = include.friend %}
+
+<div class="row"><div class="col-12">
+  <a class="card" href="{{ site.baseurl }}{{ friend.url }}">
+    <div class="card-img" style="padding-top: {{friend.icon-ratio}}; background-image:url({{friend.icon}})"></div>
+    <div class="card-title-small">
+      {{friend.title}} &gt;
+    </div>
+  </a>
+</div></div>

@@ -1,32 +1,50 @@
 ---
 layout: default
 ---
+{% include event-cover.html event=page %}
 
-{% assign organiser = site.data.organisers.[page.organiser] %}
+<div class="container">
+  <div class="row">
+    <div class="col-8 col-m-12">
+      <main class="document">
+        <ul>
+          <li>
+            <strong>Dia</strong>: {% include date.html date=event.date %}
+          </li>
+          <li>
+            <strong>Hora</strong>: {{ page.start_time }} - {{ page.end_time }}
+          </li>
+          <li>
+            <strong>Lloc</strong>: {% include venue-mini.html venue_ref=event.venue %}
+          </li>
+          {% if page.website %}
+          <li class="ellipsis">
+            <strong>Website</strong>:&nbsp;<a target="_blank" href="{{page.website}}">{{page.website}}</a>
+          </li>
+          {% endif %}
+        </ul>
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        {{ content }}
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    {% if organiser.photo %}
-        <h3 class="post-organisers-name">By {{organiser.name}}</h3>
-    {% endif %}
-    <h2 class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</h2>
-    <h3 class="post-time">From {{ page.start_time}} to {{page.end_time }}</h3>
-  </header>
+      </main>
+      <div class="hidden-desktop">
+        <h3>Presentat per:</h3>
+        {% include person-card.html person_ref=page.speaker %}
 
-  {% if organiser.photo %}
-    <div class="author" style="background-image:url({{organiser.photo}});"></div>
-  {% endif %}
+        <h3>Localització:</h3>
+        {% include venue-card.html venue_ref=page.venue %}
+      </div>
 
-    <div class="post-content" itemprop="articleBody">
-    {{ content }}
+      {% include prev-next.html %}
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 hidden-mobile">
+      <h3>Presentat per:</h3>
+      {% include person-card.html person_ref=page.speaker %}
+
+      <h3>Localització:</h3>
+      {% include venue-card.html venue_ref=page.venue %}
+    </div>
   </div>
-
-    {% if organiser.email %}
-        <div>
-            <a href='mailto:{{organiser.email}}?subject=Register interest for {{page.title}} on {{ page.date | date: "%B %-d, %Y" }}&body=Hi! Im interested in your event. Can I come please?' class="button button-primary">Register Interest</a>
-        </div>
-    {% endif %}
-
-</article>
+  {% include next-event.html %}
+</div>

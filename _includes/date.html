@@ -1,0 +1,6 @@
+{% assign date = include.date %}
+
+{% include date-weekday.html date=date %},
+{{date | date:'%-d'}}
+{% include date-month.html date=date %}
+{{date | date:'%Y'}}

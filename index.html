@@ -1,64 +1,59 @@
 ---
 layout: default
-cover: 'http://www.abisolutions.org.uk/website/images/ConferencesHR.jpg'
 ---
+<header>
+{% include next-events.html limit=1 template="event-covers.html" %}
+</header>
 
+<div class="container">
+  <div class="row">
+    <main class="col-8 col-m-12">  
 
+      <!-- next events -->
+      <h1>Properament</h1>
+      <div class="row events">
+      {% include next-events.html %}
+      </div>
+      <!-- /next events -->
 
-<div class="home">
-    
-    {% capture currentDate %}{{'now' | date: '%s' }}{% endcapture %}
+      <!-- past events -->
+      <h1>Esdeveniments passats</h1>
+      <div class="row events">
+      {% include past-events.html %}
+      </div>
+      <!-- /past events -->
+    </main><!-- /.col-8 -->
 
-    <div class="clearfix">
+    <div class="col-1"></div><!-- empty space for better look -->
 
-      <h1 class="event-time-heading fix-top">Future {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h1>
+    <!-- sidebar -->
+    <div class="col-3 hidden-mobile">
+      <!-- friends -->
+      <h3>Organitza</h3>
+      <a class="card" href="http://enginyeriainformatica.cat/" target="_blank" class="min-height: ">
+        <div class="card-img" style="padding-top: 45%; background-image: url(http://enginyeriainformatica.cat/wp-content/uploads/2012/05/informaTICs-LOGO-01-b.png)"></div>
+      </a>
 
-      {% for post in site.posts reversed %}
-
-        {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
-
-        {% if blogDate >= currentDate %}
-      
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            {% if post.cover %}
-            <div class="event-sqaure" style="background-image:url({{post.cover}});">
-            {% else %}
-            <div class="event-sqaure" style="background-image:url(http://evento.io/img/cover.jpg);">
-            {% endif %}
-              <h2>{{ post.title }} <span>{{ post.date | date: "%b %-d, %Y" }}</span></h2>
-               <div class='event-square-overlay'></div>
-            </div>
-           
-          </a>
-
-        {% endif %}
-
+      <!-- friends -->
+      <h3>Amics</h3>
+      {% for friend in site.friends %}
+      {% include friend-card.html friend=friend %}
       {% endfor %}
-    </div>
-    <div class="clearfix">
+      <!-- friends -->
 
-      <h1 class="event-time-heading">Past {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h1>
-      {% for post in site.posts %}
+      <h3>Twitter</h3>
+      <div class="row">
+      <div class="col-12">
+      <a class="twitter-timeline" href="https://twitter.com/COEINF" data-height="440" data-chrome="nofooter">Tweets by COEINF</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div></div>
+    </div><!-- /.col-2 -->
+    <!-- /sidebar -->
 
-        {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
-
-        {% if blogDate < currentDate %}
-
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            {% if post.cover %}
-            <div class="event-sqaure" style="background-image:url({{post.cover}});">
-            {% else %}
-            <div class="event-sqaure" style="background-image:url(http://app-beacon.com/wp-content/uploads/2015/05/events.jpg);">
-            {% endif %}
-              <h2>{{ post.title }} <span>{{ post.date | date: "%b %-d, %Y" }}</span></h2>
-              <div class='event-square-overlay'></div>
-            </div>
-            
-          </a>
-
-        {% endif %}
-
-      {% endfor %}
-    </div>
-
+  </div><!-- /.row -->
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
+<script>
+  $('.row.events').masonry();
+</script>

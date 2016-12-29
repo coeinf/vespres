@@ -1,0 +1,27 @@
+{% assign event = include.event %}
+
+<div class="cover">
+  <div class="cover-img" style="background-image:url({{event.cover}}"></div>
+
+  <br><br><br>
+  <div class="cover-caption">
+    <div class="lg-6">
+      {% include time-icon.html date=event.date %}
+    </div>
+    <div>
+      {{event.start_time}}<br>
+      a {% include venue-mini.html venue_ref=event.venue %}
+    </div>
+    <div class="container container-small">
+      <h1>{{event.title}}</h1>
+      <p>
+        {{ event.excerpt }}
+      </p>
+      {% if page.url == '/' %}
+      <p>
+        <a href="{{ site.baseurl }}{{event.url}}" class="btn btn-raised btn-alt btn-lg">Detalls</a>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</div>

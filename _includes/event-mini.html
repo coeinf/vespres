@@ -1,0 +1,5 @@
+{% assign event = include.event %}
+
+<a href="{{ site.baseurl }}{{ event.url }}" title="{{ event.title }}">
+  {% include time-icon.html date=event.date %}
+</a>

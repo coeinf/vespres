@@ -4,12 +4,15 @@ layout: post
 #event information
 title:  "ReactJS"
 cover: "http://blog.addthiscdn.com/wp-content/uploads/2014/11/addthis-react-flux-javascript-scaling.png"
+cover_ratio: 38%
 date:   2016-03-28
 start_time: "12:00"
 end_time: "13:00"
+category: "event"
+venue: coeinf-hq
 
 #event organiser details
-organiser: "David Boyne"
+speaker: albert-castellana
 
 ---
 

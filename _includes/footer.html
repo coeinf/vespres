@@ -1,13 +1,31 @@
-<footer class="site-footer">
+<footer>
+  <div class="container">
 
-  <div class="wrapper">
+    <div class="row">
+      <div class="col-3 col-m-12">
+        <h3><a href="{{ site.baseurl }}/">Vespers al Col·legi</a></h3>
+        <a href="{{ site.baseurl }}/">Les xerrades</a><br><br>
+        <h3><a href="http://enginyeriainformatica.cat">El Col·legi</a></h3>
+      </div>
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-    <p>
-      {{ site.description }}
-      {% include icon-github.html %}
-    </p>
+      <div class="col-3 col-m-12">
+        <h3>Col·laboradors:</h3>
+        {% for person in site.people  %}
+        <a href="{{ site.baseurl }}{{ person.url }}">{{ person.title }}</a><br>
+        {% endfor %}
+      </div>
 
+      <div class="col-3 col-m-12">
+        <h3>Amics:</h3>
+        {% for friend in site.friends  %}
+        <a href="{{ site.baseurl }}{{ friend.url }}">{{ friend.title }}</a><br>
+        {% endfor %}
+      </div>
+
+      <div class="col-3 col-m-12">
+        <h3><a href="{{ site.baseurl }}/about/">En quant...</a></h3>
+        <h3><a href="{{ site.baseurl }}/codi-de-conducta/">Codi de conducta</a></h3>
+      </div>
+    </div>
   </div>
-
 </footer>

@@ -1,0 +1,41 @@
+.cover {
+  position: relative;
+  width: 100%;
+  background: $primary-500;
+  color: $secondary-white-text;
+  text-align: center;
+  padding-bottom: 20px;
+
+  h1 {
+    color: $primary-white-text;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.cover-img {
+  position: absolute;
+  top: 0; bottom: 0; width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.2;
+  -webkit-filter: contrast(50%) blur(5px);
+  filter: contrast(50%) blur(5px);
+}
+
+.cover-padding {
+  height: 300px;
+  max-height: 30vh;
+  min-height: 100px;
+}
+
+.cover-caption {
+  position: relative;
+}
+
+.cover-2 {
+  text-align: center;
+}

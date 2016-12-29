@@ -1,0 +1,9 @@
+{% assign venue = site.venues | where:"slug",include.venue_ref | first %}
+
+<a href="{{ site.baseurl }}{{ venue.url }}" class="card">
+  <iframe src="{{ venue.maps_isrc }}" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+  <div class="card-title">
+    {{ venue.title }}
+    <small>{{ venue.address1 }}</small>
+  </div>
+</a>

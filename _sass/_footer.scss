@@ -1,0 +1,11 @@
+footer {
+  background: #bbb;
+  //margin-top: 48px; trick for the footer
+  padding: 0 0 16px;
+  font-size: 14px;
+
+  a, a:hover, a:visited, a:active, a:focus {
+    color: inherit;
+    font-weight: bolder;
+  }
+}

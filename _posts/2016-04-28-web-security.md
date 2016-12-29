@@ -7,9 +7,10 @@ cover: "http://rack.2.mshcdn.com/media/ZgkyMDEyLzEyLzA0L2JiLzl0aGluZ3NidXNpLmNZb
 date:   2016-04-03
 start_time: "10:00"
 end_time: "17:00"
+venue: coeinf-hq
 
 #event organiser details
-organiser: "Frank Smith"
+speaker: javier-gallego
 
 
 ---

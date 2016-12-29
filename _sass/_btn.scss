@@ -1,0 +1,79 @@
+
+.btn, a.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 2em;
+  margin: 0.5em 0.5em;
+  padding: 0 0.5em;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.btn, a.btn, .btn-default, .btn-primary, .btn-alt {
+  color: $primary-text;
+  text-decoration: none;
+}
+
+.btn-invert, a.btn-invert {
+  color: $primary-white-text;
+}
+
+.btn-lg {
+  font-size: 1.5em;
+}
+
+.btn-raised {
+
+  padding: 0 2em;
+  box-shadow: $z1-shadow;
+  text-decoration: none;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+  }
+  &:hover, &:focus {
+    box-shadow: $z2-shadow;
+  }
+  &:active {
+    box-shadow: $z3-shadow;
+  }
+
+  &.btn-default {
+    background: white;
+  }
+}
+
+.btn:hover, .btn:focus {
+  background: rgba(158,158,158,0.2);
+}
+
+.btn-raised.btn-primary {
+  background: $primary-500;
+  color: $primary-white-text;
+
+  &:hover, &:focus {
+    background: $primary-100;
+    color: $primary-text;
+  }
+}
+
+.btn-raised.btn-alt {
+  background: $accent-200;
+  color: $primary-text;
+
+  &:hover, &:focus {
+    background: $accent-100;
+  }
+}
+
+.btn-default:active, .btn-raised.btn-default:active {
+  background: rgba(158,158,158,0.5);
+}
+.btn-primary:active, .btn-raised.btn-primary:active {
+  background: $primary-700;
+  color: $primary-white-text;
+}
+.btn-alt:active, .btn-raised.btn-alt:active {
+  background: $accent-400;
+}

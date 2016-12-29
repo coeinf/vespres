@@ -1,0 +1,30 @@
+<div class="navbar">
+  <div class="container">
+
+    <a href="{{ site.baseurl }}/" class="navbar-brand ellipsis">
+      <span class="{% if page.url != '/' %}hidden-mobile{% endif %}">
+        Vespres al Col·legi
+      </span>
+      {% if page.url != '/' %}
+        <span class="hidden-desktop">&lt;</span>
+        <span class="hidden-mobile">&gt;</span>
+        {{ page.title }}
+      {% endif %}
+    </a>
+
+    <div class="float-right">
+      <!--
+      {% if page.url != '/' %}
+      {% unless page.url contains '/event/' %}
+      <span class="hidden-mobile">Proper esdeveniment el</span>
+      <span class="navbar-next-event">
+      {% include next-events.html limit=1 template="event-minis.html" %}
+      </span>
+      {% endunless %}
+      {% endif %}
+      -->
+      <a class="btn btn-invert" href="{{ site.baseurl }}/about/">En quant</a>
+    </div>
+
+  </div>
+</div>

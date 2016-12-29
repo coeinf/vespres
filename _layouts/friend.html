@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<header class="cover-2">
+  <img src="{{page.cover}}" style="max-height: 60vh">
+  <h1>{{page.title}}</h1>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 col-m-12">
+      <main class="document">
+        <ul>
+          {% if page.website %}
+          <li class="ellipsis">
+            <strong>Website</strong>:&nbsp;<a target="_blank" href="{{page.website}}">{{page.website}}</a>
+          </li>
+          {% endif %}
+          {% if page.twitter %}
+          <li class="ellipsis">
+            <strong>Twitter</strong>:&nbsp;<a target="_blank" href="https://twitter.com/{{page.twitter}}/">https://twitter.com/{{page.twitter}}/</a>
+          </li>
+          {% endif %}
+          {% if page.meetup %}
+          <li class="ellipsis">
+            <strong>Meetup</strong>:&nbsp;<a target="_blank" href="https://www.meetup.com/{{page.meetup}}/">https://www.meetup.com/{{page.meetup}}/</a>
+          </li>
+          {% endif %}
+        </ul>
+
+        {{ content }}
+
+      </main>
+
+      {% include prev-next.html %}
+    </div>
+    <div class="col-1"></div>
+    <div class="col-3 hidden-mobile">
+      {% if page.meetup_widget %}
+      <div style="height:380px; position: relative; overflow: visible;">
+      <iframe style="position: absolute; right: 0;" width="225" height="360" src="{{page.meetup_widget}}" frameborder="0"></iframe>
+      </div>
+      {% endif %}
+
+      {% if page.twitter %}
+      <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      {% endif %}
+    </div>
+  </div>
+  <br><br>
+  {% include next-event.html %}
+
+</div>

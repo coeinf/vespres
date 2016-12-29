@@ -1,0 +1,5 @@
+{% assign events = include.events %}
+
+{% for event in events %}
+{% include event-cover.html event=event %}
+{% endfor %}

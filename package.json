@@ -1,0 +1,28 @@
+{
+  "name": "evento",
+  "version": "1.0.0",
+  "description": "Evento is a minimal, responsive theme for Jekyll. The projects allows people, groups or companies to host and show a list future and past events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "watchify --debug -t rollupify -t babelify -t browserify-ngannotate _app/index.js -o  assets/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drpicox/evento.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drpicox/evento/issues"
+  },
+  "homepage": "https://github.com/drpicox/evento#readme",
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "browserify-ngannotate": "^2.0.0",
+    "rollupify": "^0.3.5",
+    "watchify": "^3.7.0"
+  }
+}

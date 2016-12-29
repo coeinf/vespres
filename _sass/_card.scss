@@ -1,0 +1,70 @@
+.card {
+  position: relative;
+  display: block;
+  border-radius: 2px;
+  box-shadow: $z1-shadow;
+  background: white;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+  & > * {
+    float: left;
+    width: 100%;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+a.card {
+  cursor: pointer;
+  &:hover, &:focus {
+    background: #f4f4f4; 
+    box-shadow: $z2-shadow;
+  }
+  &:active {
+    &:before {
+      border-radius: 2px;
+      display: block;
+      content: " ";
+      position: absolute;
+      z-index: 1;
+      top: 0; bottom: 0; left: 0; right: 0;
+      background: $hint-text;
+    }
+    box-shadow: $z3-shadow;
+  }
+}
+
+.card-img {
+  width: 100%;
+  padding-top: percentage(9/16);
+  background: $hint-text;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card-title-small {
+  color: $primary-text;
+  margin: 0;
+  padding: 8px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.card-title {
+  padding: 16px 24px;
+  font-weight: bolder;
+  color: $primary-text;
+
+  small {
+    display: block;
+    font-weight: lighter;
+    color: $secondary-text;
+  }
+}
+
+.card-actions {
+  margin: 0px 8px;
+}

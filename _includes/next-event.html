@@ -1,0 +1,17 @@
+{% capture currentDate %}{{'now' | date: '%s' }}{% endcapture %}
+
+{% if include.limit %}
+  {% assign limit = include.limit %}
+{% else %}
+  {% assign limit = site.posts | size %}
+{% endif %}
+
+{% for event in site.posts reversed %}
+  {% capture blogDate %}{{event.date | date: '%s' }}{% endcapture %}
+  {% if blogDate >= currentDate %}
+    {% assign next_event = event %}
+    {% break %}
+  {% endif  %}
+{% endfor %}
+
+{% include event-next.html event=next_event %}

@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  margin: auto;
+  max-width: $box-size * 16 + $box-glutter * 15;
+  padding: 0 $box-glutter;
+}
+
+.container-small {
+  max-width: $box-size * 12 + $box-glutter * 11;
+}

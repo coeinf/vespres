@@ -1,3 +1,19 @@
+collections:
+  friends:
+      output: true
+      permalink: /friends/:path/
+  people:
+      output: true
+      permalink: /people/:path/
+  venues:
+      output: true
+      permalink: /venues/:path/
+
+events:
+  past: []
+  future: []
+
+
 # Evento Theme/Blog
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -6,22 +22,26 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Evento
+title: Vespres al Col·legi
 
 #What is the name of the events or talks you would like to host? (Example Brownbags, Talks, Lighting Talks)
-event_label: Events
+event_label: Xerrades
 
 description: > # this means to ignore newlines until "baseurl:"
-  Simple Jekyll theme to host internal/external events happening in and around your area. Free free to contribute or fork the repo.
+  Xerrades del Col·legi d'Enginyers d'Informàtics.
+  Coneixements generals d'informàtica,
+  introducció a noves técnologies,
+  i novetats de la comunitat.
+  Lliure accés a tothom interessat.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://vespres.coeinf.com" # the base hostname & protocol for your site
 
 #These settings might be able to go?
-author: David Boyne
-twitter_username: boyney123
-github_username:  boyney123/evento
-company_name: Comparethemarket
+author: David Rodenas
+twitter_username: drpicox
+github_username:  drpicox/evento
+company_name: Col·legi d'Enginyeria Informatica
 
 # Build settings
 markdown: kramdown
@@ -31,3 +51,6 @@ future: true
 
 permalink: /event/:title.html
 
+exclude:
+  - old
+  - node_modules

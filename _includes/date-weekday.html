@@ -1,0 +1,10 @@
+{% assign w = include.date | date: "%-w" %}
+{% case w %}
+  {% when '1' %} Dilluns
+  {% when '2' %} Dimarts
+  {% when '3' %} Dimecres
+  {% when '4' %} Dijous
+  {% when '5' %} Divendres
+  {% when '6' %} Dissabte
+  {% when '0' %} Diumenge
+{% endcase %}

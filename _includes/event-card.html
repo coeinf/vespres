@@ -1,0 +1,15 @@
+{% assign event = include.event %}
+
+<a href="{{ site.baseurl }}{{ event.url }}" class="card">
+  <div class="card-img" style="
+    {% if event.cover_ratio %}padding-top: {{ event.cover_ratio }};{% endif %}
+    background-image: url({{ event.cover }});
+  "></div>
+  <div class="card-title">
+    {{ event.title }}
+    <small>{% include date.html date=event.date %}</small>
+  </div>
+  <div class="card-actions">
+    <span href="{{ site.baseurl }}{{ event.url }}" class="btn">Veure</span>
+  </div>
+</a>

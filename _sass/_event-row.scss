@@ -1,0 +1,27 @@
+.event-row {
+  position: relative;
+  display: block;
+  & > * {
+    float: left;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  & > img {
+    max-height: 72px;
+  }
+}
+
+.event-row-title {
+  padding: 16px 24px;
+  font-weight: bolder;
+  color: $primary-text;
+
+  small {
+    display: block;
+    font-weight: lighter;
+    color: $secondary-text;
+  }
+}

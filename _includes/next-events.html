@@ -1,0 +1,18 @@
+{% assign currentDate = 'now' | date: '%s' %}
+{% assign events = '' | split:'' %}
+{% assign template = include.template | default:'event-cards.html' %}
+{% if include.limit %}
+  {% assign limit = include.limit %}
+{% else %}
+  {% assign limit = site.posts | size %}
+{% endif %}
+
+{% for event in site.posts reversed %}
+  {% capture blogDate %}{{event.date | date: '%s' }}{% endcapture %}
+  {% if blogDate >= currentDate and limit > 0 %}
+    {% assign events = events | push:event %}
+    {% assign limit = limit | minus:1 %}
+  {% endif  %}
+{% endfor %}
+
+{% include {{ template }} events=events %}

@@ -1,0 +1,46 @@
+time.icon {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  width: 1em;
+  height: 1em;
+  background-color: #fff;
+  box-shadow: $z1-shadow;
+  border-radius: 2px;
+
+  & > * {
+    display: block;
+    width: 100%;
+    font-size: 0.14em;
+    font-weight: bold;
+    text-align: center;
+    font-style: normal;
+  }
+
+
+  strong
+  {
+    .of { display: none; }
+    border-radius: 2px 2px 0 0;
+    position: absolute;
+    top: 0;
+    padding: 0.4em 0;
+    color: $hint-text;
+    background-color: $primary-100;
+  }
+  em
+  {
+    position: absolute;
+    bottom: 0.4em;
+    color: $primary-100;
+  }
+  & > span
+  {
+    font-size: 0.4em;
+    letter-spacing: -0.05em;
+    padding-top: 0.8em;
+    color: $secondary-text;
+    text-shadow: none;
+  }
+}
+

@@ -32,7 +32,9 @@ backurl: /
       </main>
       <div class="hidden-desktop">
         <h3>Presentat per:</h3>
-        {% include person-card.html person_ref=page.speaker %}
+        {% for speaker_ref in page.speakers %}
+        {% include person-card.html person_ref=speaker_ref %}
+        {% endfor %}
 
         <h3>Localització:</h3>
         {% include venue-card.html venue_ref=page.venue %}
@@ -47,7 +49,9 @@ backurl: /
     <div class="col-1"></div>
     <div class="col-3 hidden-mobile">
       <h3>Presentat per:</h3>
-      {% include person-card.html person_ref=page.speaker %}
+      {% for speaker_ref in page.speakers %}
+      {% include person-card.html person_ref=speaker_ref %}
+      {% endfor %}
 
       <h3>Localització:</h3>
       {% include venue-card.html venue_ref=page.venue %}

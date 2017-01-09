@@ -11,8 +11,8 @@ end_time: "13:00"
 category: "event"
 venue: coeinf-hq
 
-#event organiser details
-speaker: albert-castellana
+speakers: 
+  - albert-castellana
 
 sponsors:
   - acme

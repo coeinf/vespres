@@ -9,8 +9,8 @@ start_time: "10:00"
 end_time: "17:00"
 venue: coeinf-hq
 
-#event organiser details
-speaker: javier-gallego
+speakers:
+  - javier-gallego
 
 sponsors:
   - acme

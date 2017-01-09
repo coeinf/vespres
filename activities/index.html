@@ -6,7 +6,7 @@ title: Altres activitats
 <ul class="link-list">
 {% for activity in site.activities reversed %}
   <li style="margin-bottom: 6px;">
-    <a href="{{ site.baserul }}{{ activity.url }}">
+    <a href="{{ site.baseurl }}{{ activity.url }}">
       <strong>{{ activity.title }}</strong><br>
       <small>{% include date.html date=activity.date %}</small><br>
     </a>

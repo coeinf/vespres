@@ -28,14 +28,20 @@ backurl: /people
 
         {{ content }}
 
-        {% assign talks = site.posts | where:"speaker",page.slug %}
+        {% assign talks = '' | split:'' %}
+        {% for post in site.posts %}
+          {% if post.speakers contains page.slug %}
+            {% assign talks = talks | push:post %}
+          {% endif %}
+        {% endfor %}
+        
         {% if talks.size > 0 %}
           <h2>Xerrades</h2>
           <ul class="link-list">
           {% for talk in talks %}
             {% capture formattedDate %}{% include date.html date=talk.date %}{% endcapture %}
             <li style="margin-bottom: 12px;">
-              <a href="{{ site.baserul }}{{ talk.url }}">
+              <a href="{{ site.baseurl }}{{ talk.url }}">
                 <strong>{{ talk.title }}</strong><br>
                 <small>{{ formattedDate | rstrip }}. {{ talk.excerpt | markdownify | strip_html}}</small><br>
               </a>

@@ -1,6 +1,6 @@
 ---
-layout: page
-title: En quant
+layout: document
+title: Què és?
 ---
 Els Vespres al Col·legi es una iniciativa del Col·legi d'Informatics.
 

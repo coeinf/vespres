@@ -1,0 +1,14 @@
+acme:
+    name: ACME Ltd.
+    logo: https://mir-s3-cdn-cf.behance.net/project_modules/disp/c3d0f834884877.56060c8349f64.jpg
+    website: http://acme.com
+
+binford:
+    name: Binford Tools
+    logo: https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Binford.svg/2000px-Binford.svg.png
+    website: http://binford.com
+
+pied-piper:
+    name: Pied Piper
+    logo: http://static.squarespace.com/static/531f2c4ee4b002f5b011bf00/t/536bdcefe4b03580f8f6bb16/1399577848961/hbosiliconvalleypiedpiperoldlogo
+    website: http://piedpiper.com

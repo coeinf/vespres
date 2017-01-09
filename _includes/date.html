@@ -1,6 +1,7 @@
 {% assign date = include.date %}
+{% capture weekday %}{% include date-weekday.html date=date %}{% endcapture %}
 
-{% include date-weekday.html date=date %},
+{{ weekday | rstrip }},
 {{date | date:'%-d'}}
 {% include date-month.html date=date %}
 {{date | date:'%Y'}}

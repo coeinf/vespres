@@ -14,6 +14,10 @@ venue: coeinf-hq
 #event organiser details
 speaker: albert-castellana
 
+sponsors:
+  - acme
+  - binford
+
 ---
 
 I will be doing a small talk on an Introduction into ReactJS. We will cover the following:

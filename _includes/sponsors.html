@@ -1,0 +1,10 @@
+{% assign sponsors_ref = include.sponsors_ref %}
+
+<div style="text-align: center; ">
+{% for sponsor_ref in sponsors_ref %}
+  {% assign sponsor = site.data.sponsors.[sponsor_ref] %}
+  <a hef="{{ sponsor.website }}" target="_blank" style="display: inline-block; max-width: 300px;">
+    <img alt="{{ sponsor.name }}" src="{{ sponsor.logo }}">
+  </a><br>
+{% endfor %}
+</div>

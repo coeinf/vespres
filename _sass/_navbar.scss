@@ -11,15 +11,18 @@
   box-shadow: $z3-shadow;
 }
 
-.navbar-brand, a.navbar-brand {
+.navbar-brand {
   display: block;
   font-weight: bolder;
   font-size: 21px;
-  color: $primary-white-text;
-  text-decoration: none;
   position: absolute;
   left: 8px;
   right: 120px;
+}
+
+.navbar-brand a {
+  color: $primary-white-text;
+  text-decoration: none;
 }
 
 .navbar-next-event {

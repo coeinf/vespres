@@ -10,9 +10,6 @@ meetup_widget: http://meetu.ps/34Ptr5
 website: http://barcelona.sudoers.io
 ---
 
-Què és?
--------
-
 Un grup de sysadmins Unix de l'àrea de Barcelona que ens trobem un cop al mes. El format de les reunions és força clàssic: un projector de vídeo, un parell de presentacions d'alguns participants i quantes més preguntes millor.
 
 I cal una altra reunió de geeks?

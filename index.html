@@ -16,6 +16,11 @@ layout: default
       </div>
       <!-- /next events -->
 
+      <h1>Altres Activitats</h1>
+      <div class="row activities">
+      {% include next-activities.html limit=3 %}
+      </div>
+
       <!-- past events -->
       <h1>Esdeveniments passats</h1>
       <div class="row events">
@@ -36,15 +41,17 @@ layout: default
 
       <!-- friends -->
       <h3>Amics</h3>
-      {% for friend in site.friends %}
+      {% assign friends = site.friends | sample:3 %}
+      {% for friend in friends %}
       {% include friend-card.html friend=friend %}
       {% endfor %}
+      <a href="{{ site.baseurl }}/friends">Veure tots &gt;</a>
       <!-- friends -->
 
       <h3>Twitter</h3>
       <div class="row">
       <div class="col-12">
-      <a class="twitter-timeline" href="https://twitter.com/COEINF" data-height="440" data-chrome="nofooter">Tweets by COEINF</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="twitter-timeline" href="https://twitter.com/COEINF" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by COEINF</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div></div>
     </div><!-- /.col-2 -->
     <!-- /sidebar -->

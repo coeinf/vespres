@@ -1,5 +1,7 @@
 ---
 layout: default
+backtext: "Els Vespres"
+backurl: /
 ---
 {% include event-cover.html event=page %}
 
@@ -7,6 +9,7 @@ layout: default
   <div class="row">
     <div class="col-8 col-m-12">
       <main class="document">
+        <h1>{{ page.title }}</h1>
         <ul>
           <li>
             <strong>Dia</strong>: {% include date.html date=event.date %}
@@ -33,8 +36,12 @@ layout: default
 
         <h3>Localització:</h3>
         {% include venue-card.html venue_ref=page.venue %}
+
+        <h3>Sponsors</h3>
+        {% include sponsors.html sponsors_ref=page.sponsors class="col-m-6" %}
       </div>
 
+      <br>
       {% include prev-next.html %}
     </div>
     <div class="col-1"></div>
@@ -44,6 +51,9 @@ layout: default
 
       <h3>Localització:</h3>
       {% include venue-card.html venue_ref=page.venue %}
+
+      <h3>Sponsors</h3>
+      {% include sponsors.html sponsors_ref=page.sponsors %}
     </div>
   </div>
   {% include next-event.html %}

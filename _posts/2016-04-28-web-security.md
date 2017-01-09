@@ -12,6 +12,9 @@ venue: coeinf-hq
 #event organiser details
 speaker: javier-gallego
 
+sponsors:
+  - acme
+
 
 ---
 

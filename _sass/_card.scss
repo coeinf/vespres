@@ -68,3 +68,10 @@ a.card {
 .card-actions {
   margin: 0px 8px;
 }
+
+@media (max-width: $mobile-max) {
+  .card-m-1 { width: 25%; }
+  .card-m-2 { width: 50%; }
+  .card-m-3 { width: 75%; }
+}
+

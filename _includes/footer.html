@@ -3,23 +3,30 @@
 
     <div class="row">
       <div class="col-3 col-m-12">
-        <h3><a href="{{ site.baseurl }}/">Vespers al Col·legi</a></h3>
-        <a href="{{ site.baseurl }}/">Les xerrades</a><br><br>
+        <h3><a href="{{ site.baseurl }}/">Vespres al Col·legi</a></h3>
+        <a href="{{ site.baseurl }}/">Les xerrades</a><br>
+        <a href="{{ site.baseurl }}/sponsors">Sponsors</a><br>
+        <a href="{{ site.baseurl }}/activities">Altres activitats</a><br>
+        <br>
         <h3><a href="http://enginyeriainformatica.cat">El Col·legi</a></h3>
       </div>
 
       <div class="col-3 col-m-12">
-        <h3>Col·laboradors:</h3>
-        {% for person in site.people  %}
+        <h3><a href="{{ site.baseurl }}/people">Col·laboradors:</a></h3>
+        {% assign people = site.people | sample:5 %}
+        {% for person in people %}
         <a href="{{ site.baseurl }}{{ person.url }}">{{ person.title }}</a><br>
         {% endfor %}
+        <a href="{{ site.baseurl }}/people">Veure tots &gt;</a>
       </div>
 
       <div class="col-3 col-m-12">
-        <h3>Amics:</h3>
-        {% for friend in site.friends  %}
+        <h3><a href="{{ site.baseurl }}/friends">Amics:</a></h3>
+        {% assign friends = site.friends | sample:5 %}
+        {% for friend in friends  %}
         <a href="{{ site.baseurl }}{{ friend.url }}">{{ friend.title }}</a><br>
         {% endfor %}
+        <a href="{{ site.baseurl }}/friends">Veure tots &gt;</a>
       </div>
 
       <div class="col-3 col-m-12">

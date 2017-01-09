@@ -1,11 +1,11 @@
 @media (max-width: $mobile-max) {
   .hidden-mobile {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (min-width: $desktop-min) {
   .hidden-desktop {
-    display: none;
+    display: none !important;
   }
 }

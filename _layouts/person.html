@@ -1,5 +1,7 @@
 ---
 layout: default
+backtext: "Col·laboradors"
+backurl: /people
 ---
 <div class="container">
   <div class="row">
@@ -26,6 +28,22 @@ layout: default
 
         {{ content }}
 
+        {% assign talks = site.posts | where:"speaker",page.slug %}
+        {% if talks.size > 0 %}
+          <h2>Xerrades</h2>
+          <ul class="link-list">
+          {% for talk in talks %}
+            {% capture formattedDate %}{% include date.html date=talk.date %}{% endcapture %}
+            <li style="margin-bottom: 12px;">
+              <a href="{{ site.baserul }}{{ talk.url }}">
+                <strong>{{ talk.title }}</strong><br>
+                <small>{{ formattedDate | rstrip }}. {{ talk.excerpt | markdownify | strip_html}}</small><br>
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+
       </main>
 
       {% include prev-next.html %}
@@ -36,7 +54,7 @@ layout: default
       <br><br>
 
       {% if page.twitter %}
-      <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       {% endif %}
     </div>
   </div>

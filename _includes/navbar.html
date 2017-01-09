@@ -1,16 +1,29 @@
 <div class="navbar">
   <div class="container">
 
-    <a href="{{ site.baseurl }}/" class="navbar-brand ellipsis">
-      <span class="{% if page.url != '/' %}hidden-mobile{% endif %}">
-        Vespres al Col·legi
-      </span>
-      {% if page.url != '/' %}
-        <span class="hidden-desktop">&lt;</span>
-        <span class="hidden-mobile">&gt;</span>
-        {{ page.title }}
-      {% endif %}
-    </a>
+
+    <span class="navbar-brand ellipsis">
+      <a href="{{ site.baseurl }}/">
+        <span class="{% if page.url != '/' %}hidden-mobile{% endif %}">
+          Vespres al Col·legi
+        </span>
+        {% assign backtext = page.backtext | default: layout.backtext %}
+        {% assign backurl = page.backurl | default: layout.backurl %}
+        {% if backurl %}
+          </a>
+          <a href="{{ site.baseurl }}{{ backurl }}">
+        {% endif %}
+        {% if page.url != '/' %}
+          <span class="hidden-desktop">&lt;</span>
+          <span class="hidden-mobile">&gt;</span>
+          {% if backtext %}
+            {{ backtext }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+        {% endif %}
+      </a>
+    </span>
 
     <div class="float-right">
       <!--
@@ -23,7 +36,7 @@
       {% endunless %}
       {% endif %}
       -->
-      <a class="btn btn-invert" href="{{ site.baseurl }}/about/">En quant</a>
+      <a class="btn btn-invert" href="{{ site.baseurl }}/about/">Què és?</a>
     </div>
 
   </div>

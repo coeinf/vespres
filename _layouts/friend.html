@@ -1,5 +1,7 @@
 ---
 layout: default
+backtext: Amics
+backurl: /friends
 ---
 <header class="cover-2">
   <img src="{{page.cover}}" style="max-height: 60vh">
@@ -43,7 +45,7 @@ layout: default
       {% endif %}
 
       {% if page.twitter %}
-      <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       {% endif %}
     </div>
   </div>

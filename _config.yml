@@ -1,4 +1,7 @@
 collections:
+  activities:
+      output: true
+      permalink: /activities/:path/
   friends:
       output: true
       permalink: /friends/:path/
@@ -49,7 +52,7 @@ markdown: kramdown
 #Have to show future posts for future events.
 future: true
 
-permalink: /event/:title.html
+permalink: /events/:title
 
 exclude:
   - old

@@ -1,13 +1,32 @@
-<div class="row">
-  <div class="col-5 col-m-6">
-    {% if page.previous %}
-    &lt;&nbsp;<a href="{{ site.baseurl }}{{ page.previous.url }}">{{page.previous.title}}</a>
+{% assign _first_url = include.first_url %}
+{% assign _first_text = include.first_text %}
+{% assign _prev = include.prev %}
+{% assign _next = include.next %}
+
+{% unless _prev or _next %}
+  {% assign _prev = page.previous %}
+  {% assign _next = page.next %}
+{% endunless %}
+
+{% if _prev.slug == 'tbd' %}
+  {% assign _prev = _prev.previous %}
+{% endif %}
+{% if _next.slug == 'tbd' %}
+  {% assign _next = _next.next %}
+{% endif %}
+
+<nav aria-label="pager">
+  <ul class="pager">
+    {% if _prev %}
+    <li class="previous"><a href="{{ site.baseurl }}{{ _prev.url }}"><span aria-hidden="true">&larr;</span> {{ _prev.title }}</a></li>
+    {% else %}
+      {% if _first_url %}
+        <li class="previous"><a href="{{ site.baseurl }}{{ _first_url }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> {{ _first_text }}</a></li>
+      {% endif %}
     {% endif %}
-  </div>
-  <div class="col-2"></div>
-  <div class="col-5 col-m-6 text-right">
-    {% if page.next %}
-     <a href="{{ site.baseurl }}{{ page.next.url }}">{{page.next.title}}</a>&nbsp;&gt;
+
+    {% if _next %}
+    <li class="next"><a href="{{ site.baseurl }}{{ _next.url }}">{{ _next.title }} <span aria-hidden="true">&rarr;</span></a></li>
     {% endif %}
-  </div>
-</div>
+  </ul>
+</nav>

@@ -1,0 +1,17 @@
+{% assign _sponsors = include.sponsors %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sponsors-list">
+        {% for _sponsor in _sponsors %}
+        <a href="{{ _sponsor.website }}" tabindex="-1" target="_blank">
+          {% include fn-image.jk image=_sponsor.image %}
+          {% assign _sponsor_image = result %}
+          <img src="{{ _sponsor_image }}" alt="{{ _sponsor.name }}">
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{% assign _events = include.events %}
+
+<div class="margin-top-20 hidden-xs">
+  {% include tracks-nav.html %}  
+</div>
+
+<div class="margin-top-20">
+  {% include events-header.html events=_events %}
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <hr>
+      <h1>Properament</h1>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="margin-top-20">
+  {% include events-list.html events=_events %}
+</div>
+

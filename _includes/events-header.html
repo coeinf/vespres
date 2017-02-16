@@ -1,0 +1,32 @@
+{% assign _events = include.events %}
+
+{% if _events.size > 1 %}
+<div class="container" aria-hidden="true">
+  <div class="row">
+    <div class="col-md-8">
+      {% assign event = _events[0] %}
+      {% include event-image.html event=event tabindex="-1" %}
+    </div>
+    <div class="col-md-4 hidden-xs hidden-sm">
+      {% assign event = _events[1] %}
+      {% include event-image.html event=event small=true tabindex="-1" %}
+      <div style="padding-top: 5%;"></div>
+      {% if _events.size > 2 %}
+        {% assign event = _events[2] %}
+        {% include event-image.html event=event small=true tabindex="-1" %}
+      {% else %}
+        {% include event-tbd-image.html small=true tabindex="-1" %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% elsif _events.size == 1 %}
+<div class="container margin-top-20" aria-hidden="true">
+  <div class="row">
+    <div class="col-md-12">
+      {% assign event = _events[0] %}
+      {% include event-image.html event=event tabindex="-1" %}
+    </div>
+  </div>
+</div>
+{% endif %}

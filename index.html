@@ -1,66 +1,25 @@
 ---
 layout: default
 ---
-<header>
-{% include next-events.html limit=1 template="event-covers.html" %}
-</header>
 
-<div class="container">
-  <div class="row">
-    <main class="col-8 col-m-12">  
 
-      <!-- next events -->
-      <h1>Properament</h1>
-      <div class="row events">
-      {% include next-events.html %}
-      </div>
-      <!-- /next events -->
 
-      <h1>Altres Activitats</h1>
-      <div class="row activities">
-      {% include next-activities.html limit=3 %}
-      </div>
+{% include activities-banner.html %}
 
-      <!-- past events -->
-      <h1>Esdeveniments passats</h1>
-      <div class="row events">
-      {% include past-events.html %}
-      </div>
-      <!-- /past events -->
-    </main><!-- /.col-8 -->
 
-    <div class="col-1"></div><!-- empty space for better look -->
+{% include fn-events-all.jk %}
+{% assign events=result %}
+{% include fn-next.jk pages=events %}
+{% assign next_events = result %}
+{% include events-home.html events=next_events %}
 
-    <!-- sidebar -->
-    <div class="col-3 hidden-mobile">
-      <!-- friends -->
-      <h3>Organitza</h3>
-      <a class="card" href="http://enginyeriainformatica.cat/" target="_blank" class="min-height: ">
-        <div class="card-img" style="padding-top: 45%; background-image: url(http://enginyeriainformatica.cat/wp-content/uploads/2012/05/informaTICs-LOGO-01-b.png)"></div>
-      </a>
+{% assign contributors = site.contributors 
+    | where_exp:'contributor','contributor.slug != "tbd"' %}
+{% include contributors-home.html contributors=contributors %}
 
-      <!-- friends -->
-      <h3>Amics</h3>
-      {% assign friends = site.friends | sample:3 %}
-      {% for friend in friends %}
-      {% include friend-card.html friend=friend %}
-      {% endfor %}
-      <a href="{{ site.baseurl }}/friends">Veure tots &gt;</a>
-      <!-- friends -->
+{% include friends-home.html friends=site.friends %}
 
-      <h3>Twitter</h3>
-      <div class="row">
-      <div class="col-12">
-      <a class="twitter-timeline" href="https://twitter.com/COEINF" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by COEINF</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div></div>
-    </div><!-- /.col-2 -->
-    <!-- /sidebar -->
+{% include fn-sponsors-all.jk %}
+{% include sponsors-home.html sponsors=result %}
 
-  </div><!-- /.row -->
-</div>
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
-<script>
-  $('.row.events').masonry();
-</script>

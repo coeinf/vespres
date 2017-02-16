@@ -1,0 +1,14 @@
+{% assign _tabindex = include.tabindex %}
+
+<a href="{{ include.href }}" target="_blank" class="event-image event-image-tbd event-image-small" 
+    {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
+  <div class="event-image--caption">
+    <div class="event-image--title">
+      {% if include.text %}
+        {{ include.text }}
+      {% else %}
+        Proposa la propera xerrada&nbsp;»
+      {% endif %}
+    </div>
+  </div>
+</a>

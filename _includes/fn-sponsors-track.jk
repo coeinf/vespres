@@ -1,0 +1,20 @@
+{% assign __track = include.track %}
+{% assign __events = include.events %}
+
+{% if __track.sponsors.size > 0 %}
+  {% assign result = __track.sponsors %}  
+{% else %}
+  {% assign result = '' | split:'' %}
+{% endif %}
+
+{% for __event in __events %}
+
+  {% for __sponsor in __event.sponsors %}
+    {% unless result contains __sponsor %}
+      {% assign result = result | push:__sponsor %}
+    {% endunless %}
+  {% endfor %}
+
+{% endfor %}
+
+{% include fn-sponsors-slugs.jk slugs=result %}

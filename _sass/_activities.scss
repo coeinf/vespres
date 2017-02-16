@@ -1,0 +1,45 @@
+.activities-banner {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  height: 140px;
+}
+.activities-banner:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.activities-banner--body {
+  width: 70%;
+  padding-left: 20px;
+  float: right;
+}
+.activities-banner--body .h4 {
+  margin-top: 0;
+}
+.activities-banner--body .more {
+  color: $link-color;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+.activities-banner--image {
+  width: 30%;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  float: left;
+}
+.activities-banner--logo {
+  text-align: right;
+
+  img {
+    max-height: 160px;
+    max-width: 100%;
+  }
+}
+.activities-banner--well {
+  height: 160px;
+  overflow: hidden;
+}

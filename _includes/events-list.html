@@ -1,0 +1,123 @@
+{% assign _events = include.events %}
+
+<div class="container">
+  {% for _event in _events %}
+    {% include fn-image.jk image=_event.image %}
+    {% assign _event_image = result %}
+
+    {% include fn-date-weekday.jk date=_event.date %}
+    {% assign _weekday = result %}
+    {% include fn-date-ofmonth.jk date=_event.date %}
+    {% assign _ofmonth = result %}
+
+    {% assign _venue = site.venues | where:"slug",_event.venue | first %}
+
+
+    <div class="row">
+      <div class="hidden-xs col-sm-5 col-lg-4 col-lg-offset-1">
+        <div class="event-image--wrapper">
+          {% comment %}IMAGE{% endcomment %}
+          <a href="{{ site.baseurl }}{{ _event.url }}" 
+            class="event-image event-image-small"
+            style="background-image: url({{ _event_image }})"
+            tabindex="-1"></a>
+
+          {% comment %}SPEAKERS (not XS){% endcomment %}
+          <div class="event-image--caption text-right hidden-xs" aria-hidden="true">
+            {% for _speaker in _event.speakers %}
+              {% if _speaker != 'tbd' %}
+                &nbsp;
+                {% include contributor-image.html contributor=_speaker scale=3 tabindex="-1" %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-lg-6">
+        {% comment %}TITLE{% endcomment %}
+        <h2 style="margin: 0;">
+          <span class="xs-smaller">{{ _event.title }}</span>
+        </h2>
+
+        {% comment %}DATE AND VENUE{% endcomment %}
+        <p class="text-muted margin-top-0">
+          {% include time-text.html date=_event.date %}
+          <br class="visible-xs-block">          
+          <a href="{{ site.baseurl }}{{ _venue.url }}" tabindex="-1">{{ _venue.title }}.</a>
+        </p>
+
+        {% comment %}DESCRIPTION{% endcomment %}
+        <p>{{ _event.description | default:_event.excerpt | strip_html }}</p>
+
+        {% comment %}SPEAKERS (only xs){% endcomment %}
+        <p class="visible-xs-block" aria-hidden="false">
+        Oradors:
+        {% for _speaker in _event.speakers %}
+          {% assign _contributor = site.contributors | where:"slug",_speaker | first %}
+          <a href="{{ site.baseurl }}{{ _contributor.url }}">
+            {{ _contributor.title }}</a>{% if forloop.last %}.{% else %},{% endif %}
+        {% endfor %}
+        </p>
+
+        {% comment %}SEE MORE {% endcomment %}
+        <a href="{{ site.baseurl }}{{ _event.url }}">          
+          Veure detalls »
+          <span class="sr-only">de {{ _event.title }}</span>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-offset-2 col-lg-8">
+        <hr>
+      </div>
+    </div>
+  {% endfor %}
+  <div class="row">
+
+{% comment %}PROPOSE TALK{% endcomment %}
+{% capture file_value %}---
+title: Nom de la Xerrada
+image: https://placeimg.com/800/450/tech
+date: 2999-12-31 # tbd
+start_time: 19:00h
+end_time: 21:00h
+speakers: 
+  - tbd
+venue: tbd
+# sponsors:
+#   - a-good-sponsor 
+# description: >
+#   A good description
+---
+{% endcapture %}
+{% if page.layout == 'track' %}
+{% assign _track_slug = page.slug %}
+{% else %}
+{% assign _track_slug = 'barcelona' %}
+{% endif %}
+{% capture _tbd_href %}https://github.com/coeinf/vespres/new/master/_events/{{ _track_slug }}?&value={{ file_value | truncate: 4096 | url_encode }}{% endcapture %}
+    <div class="hidden-xs col-sm-5 col-lg-4 col-lg-offset-1">
+      {% include event-tbd-image.html href=_tbd_href text="Proposa" tabindex="-1" %}
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0 col-lg-6">
+      <h2 class="margin-top-0">
+        <span class="xs-smaller">Proposa la propera xerrada</span>
+      </h2>
+      <p>
+        Nosaltres tenim moltes idees, 
+        però de ben segur que tú també.
+        Fes-nos arribar que necessites i
+        t'ajudarem a estar al día en allò 
+        que desitges.
+      </p>
+      <p>
+        <a href="{{ _tbd_href }}" target="_blank">Proposa »</a><br>
+        <a href="https://enginyeriainformatica.cat/?page_id=202" target="_blank">Contacte »</a>
+      </p>
+    </div>
+  </div>
+</div>

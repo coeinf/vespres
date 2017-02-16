@@ -1,0 +1,4 @@
+---
+sponsors: ['acme']
+---
+bcn

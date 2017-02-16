@@ -1,0 +1,1 @@
+{% assign result = site.events | sort:'date' | reverse %}

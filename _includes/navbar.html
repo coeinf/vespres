@@ -1,43 +1,30 @@
-<div class="navbar">
-  <div class="container">
-
-
-    <span class="navbar-brand ellipsis">
-      <a href="{{ site.baseurl }}/">
-        <span class="{% if page.url != '/' %}hidden-mobile{% endif %}">
-          Vespres al Col·legi
-        </span>
-        {% assign backtext = page.backtext | default: layout.backtext %}
-        {% assign backurl = page.backurl | default: layout.backurl %}
-        {% if backurl %}
-          </a>
-          <a href="{{ site.baseurl }}{{ backurl }}">
-        {% endif %}
-        {% if page.url != '/' %}
-          <span class="hidden-desktop">&lt;</span>
-          <span class="hidden-mobile">&gt;</span>
-          {% if backtext %}
-            {{ backtext }}
-          {% else %}
-            {{ page.title }}
-          {% endif %}
-        {% endif %}
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <span><img alt="Brand" height="20" src="{{ site.baseurl }}/assets/images/vespres-moons-150.png" alt="logo de dues les llunes"></span>
+        <small>els</small> Vespres <small>del</small> Col·legi
       </a>
-    </span>
-
-    <div class="float-right">
-      <!--
-      {% if page.url != '/' %}
-      {% unless page.url contains '/event/' %}
-      <span class="hidden-mobile">Proper esdeveniment el</span>
-      <span class="navbar-next-event">
-      {% include next-events.html limit=1 template="event-minis.html" %}
-      </span>
-      {% endunless %}
-      {% endif %}
-      -->
-      <a class="btn btn-invert" href="{{ site.baseurl }}/about/">Què és?</a>
     </div>
 
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Canals <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for _track in site.tracks %}
+            <li><a href="{{ site.baseurl }}{{ _track.url }}">{{ _track.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="{{ site.baseurl }}/about">Què és?</a></li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>

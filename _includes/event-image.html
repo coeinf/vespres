@@ -1,0 +1,52 @@
+{% assign _event = include.event %}
+{% assign _small = include.small %}
+{% assign _tabindex = include.tabindex %}
+{% assign _hide_title = include.hide_title %}
+{% assign _hide_speakers = include.hide_speakers %}
+
+{% assign _venue = site.venues | where:"slug",_event.venue | first %}
+
+{% include fn-image.jk image=_event.image %}
+{% assign _image = result %}
+
+{% assign _event_year = _event.date | date: '%Y' %}
+{% assign _current_year = 'now' | date: '%Y' %}
+
+<div class="event-image--wrapper">
+  <a href="{{ site.baseurl }}{{ _event.url }}" 
+    class="event-image {% if _small %}event-image-small{% endif %} xs-smaller" 
+    style="background-image: url({{ _image }})"
+    {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
+
+      <div class="event-image--caption">
+
+        {% unless _small %}
+        {% include time-icon.html date=_event.date color='white' scale=6 %}
+        {% endunless %}
+
+        {% unless _hide_title %}
+        <div class="event-image--title">
+          <small class="xs-smaller">{{ _event.title }}</small>
+        </div>
+        {% endunless %}
+        <div class="event-image--subtitle {% if _small %}hidden-xs{% endif %}"> 
+          {% if _small %}
+            {% include time-text.html date=_event.date short=true %}
+          {% else %}
+          {{ _event.start_time }}. 
+          {% endif %}
+          {{ _venue.title }}.
+        </div>
+      </div>
+
+  </a>
+  {% unless _small or _hide_speakers %}
+    <div class="event-image--speakers hidden-xs">
+    {% for _speaker in _event.speakers %}
+      {% if _speaker != 'tbd' %}
+      {% include contributor-image.html contributor=_speaker scale=4 tabindex=_tabindex %}
+      {% endif %}
+    {% endfor %}
+    </div>
+  {% endunless %}
+</div>

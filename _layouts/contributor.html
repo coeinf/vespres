@@ -1,0 +1,134 @@
+---
+layout: default
+---
+{% assign _talks = site.events 
+    | where_exp:'event','event.speakers contains page.slug' %}
+
+{% include fn-next.jk pages=_talks %}
+{% assign _next_talk = result | first %}
+
+<div class="container margin-top-20">
+  <div class="row">
+
+    <div class="col-md-7">
+      {% comment %}MAIN IMAGE{% endcomment %}
+      <div class="pull-left" style="width: 100%; max-width: 150px; margin-right: 20px; margin-bottom: 20px">
+      {% include fn-image.jk image=page.image %}
+      {% assign _image = result %}
+        <div class="contributor-image contributor-image-block pull-right"
+          style="background-image: url({{ _image }});"
+          ></div>
+      </div>
+
+      {% comment %}NAME{% endcomment %}
+      <br>
+      <h1 class="margin-top-0"><span class="smaller-xs">{{ page.title | replace:'  ',' ' | replace:' ','<br>' }}</span></h1>
+    
+      <div class="clearfix"></div>
+
+      {% comment %}BIO{% endcomment %}
+      <h2>Bio</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{ content }}
+        </div>
+      </div>
+
+      {% include prev-next.html %}
+    </div>
+
+    <div class="col-md-4 col-md-offset-1">
+
+      {% if page.slug == 'tbd' %}
+      {% capture file_value %}---
+title: Nom i Cognoms
+image: /assets/images/user-tbd-1.png
+# email:
+# website: url
+# twitter: @nom
+# linkedin: url
+# slides: url
+# github: @nom
+---
+{% endcapture %}
+      <a class="btn btn-primary btn-lg btn-block" target="_blank" href="https://github.com/coeinf/vespres/new/master/_contributors?&value={{ file_value | truncate: 4096 | url_encode }}">
+        Nou Contributor
+      </a>
+      <br>
+      {% endif %}
+
+      {% comment %}INFORMACIO{% endcomment %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          Informació
+        </div>
+        <div class="panel-body">
+
+          <strong>Nom</strong>: {{ page.title }}.<br>
+
+          {% if page.email %}
+            <strong>Email</strong>: {{ page.email }}.
+            <br>
+          {% endif %}
+
+          {% if page.website %}
+            <strong>Website</strong>: 
+              <a href="{{ page.website }}" target="_blank">{{ page.website }}</a>.
+            <br>
+          {% endif %}
+
+          {% if page.linkedin %}
+            <strong>LinkedIn</strong>: 
+              <a href="{{ page.linkedin }}" target="_blank">{{ page.linkedin }}</a>.
+            <br>
+          {% endif %}
+
+          {% if page.slides %}
+            <strong>Slides</strong>: 
+              <a href="{{ page.slides }}" target="_blank">{{ page.slides }}</a>.
+            <br>
+          {% endif %}
+
+          {% if page.github %}
+            <strong>GitHub</strong>: 
+              <a href="https://github.com/{{ page.github }}" target="_blank">{{ page.github }}</a>.
+            <br>
+          {% endif %}
+        </div>
+      </div>
+
+      {% comment %}NEXT TALK{% endcomment %}
+      {% if _next_talk %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+          Propera xerrada
+        </div>
+        {% include event-image.html event=_next_talk small=true %}
+      </div>
+      {% endif %}
+
+      {% comment %}TWITTER{% endcomment %}
+      {% if page.twitter %}
+      <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      {% endif %}
+    </div>
+
+  </div>
+
+  {% comment %}TALKS{% endcomment %}
+  <div class="row">
+    {% if _talks.size > 0 %}
+      <div class="col-md-12">
+        <hr>
+        <h2 style="margin-bottom: 0">Xerrades</h2>
+      </div>
+      {% include events-list-short.html events=_talks %}
+      <div class="col-md-12"><hr></div>
+    {% endif %}
+  </div>
+
+</div>
+
+{% include events-banner.html %}

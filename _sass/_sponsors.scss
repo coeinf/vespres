@@ -1,0 +1,25 @@
+.sponsors-list {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    max-width: 35%;
+    margin: 20px 20px;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100px;
+  }
+  img {
+    opacity: 0.8;
+    transition: opacity 0.4s;
+
+  }
+  img:hover {
+    opacity: 1;
+  }
+}

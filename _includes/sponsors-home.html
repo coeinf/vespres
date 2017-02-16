@@ -1,0 +1,15 @@
+{% assign _sponsors = include.sponsors %}
+
+{% if _sponsors.size > 0 %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <hr>
+        <h1>Sponsors &amp; Supporters</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  {% include sponsors-list.html sponsors=_sponsors %}
+{% endif %}

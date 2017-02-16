@@ -1,0 +1,15 @@
+{% assign __pages = include.pages %}
+{% assign __limit = include.limit %}
+
+{% unless __limit %}{% assign __limit = __pages | size %}{% endunless %}
+{% assign __current_date = 'now' | date: '%s' %}
+
+{% assign result = '' | split:'' %}
+{% for __event in __pages %}
+  {% capture __event_date %}{{__event.date | date: '%s' }}{% endcapture %}
+  {% if __event_date < __current_date and __limit > 0 %}
+    {% assign result = result | push:__event %}
+    {% assign __limit = __limit | minus:1 %}
+  {% endif  %}
+{% endfor %}
+

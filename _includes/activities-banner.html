@@ -1,0 +1,44 @@
+{% include fn-next.jk pages=site.activities %}
+{% assign _next_activities = result %}
+
+<div class="container hidden-xs margin-top-20" aria-hidden="true">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="activities-banner--logo">
+        <img src="{{ site.baseurl }}/assets/images/vespres-logo.png">
+      </div>
+    </div>
+    <div class="col-sm-9 col-lg-8">
+      <div class="well activities-banner--well">
+        <div class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+
+            {% for _activity in _next_activities %}
+            <div class="item {% if forloop.first %}active{% endif %}">
+
+              <a class="activities-banner" 
+                  href="{{ site.baseurl }}{{ _activity.url }}"
+                  tabindex="-1">
+                {% include fn-image.jk image=_activity.image %}
+                {% assign _activity_image = result %}
+
+                <div class="activities-banner--image"
+                  style="background-image: url({{ _activity_image }})"
+                  ></div>
+
+                <div class="activities-banner--body">
+                  <p class="h4">{{ _activity.title }}</p>
+                  <p>{{ _activity.description | default:_activity.excerpt | strip_html | truncatewords: 21 }}</p>
+                  <p><span class="more">Més detalls »</span></p>
+                </div>
+              </a>
+
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

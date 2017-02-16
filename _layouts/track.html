@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+{% include fn-events-track.jk track=page %}
+{% assign events = result %}
+{% include fn-next.jk pages=events %}
+{% assign next_events = result %}
+{% include fn-prev.jk pages=events %}
+{% assign prev_events = result %}
+
+
+
+{% include events-home.html events=next_events %}
+{% include events-history-home.html events=prev_events %}
+
+{% include fn-contributors-track.jk track=page events=next_events %}
+{% include contributors-home.html contributors=result %}
+
+{% include fn-sponsors-track.jk track=page events=next_events %}
+{% include sponsors-home.html sponsors=result %}
+
+
+<div class="container margin-top-20">
+  <div class="row">
+    <div class="col-md-12">
+
+      {% include prev-next.html 
+          first_url="/tracks" 
+          first_text="Tots els Canals"
+          %}
+
+    </div>
+  </div>
+</div>
+

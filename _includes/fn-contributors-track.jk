@@ -1,0 +1,38 @@
+{% assign __track = include.track %}
+{% assign __events = include.events %}
+
+{% assign result = '' | split:'' %}
+
+
+
+{% for __event in __events %}
+
+  {% for __contributor in __event.speakers %}
+    {% unless result contains __contributor %}
+      {% assign result = result | push:__contributor %}
+    {% endunless %}
+  {% endfor %}
+
+  {% for __contributor in __event.contributors %}
+    {% unless result contains __contributor %}
+      {% assign result = result | push:__contributor %}
+    {% endunless %}
+  {% endfor %}
+
+{% endfor %}
+
+
+{% for __contributor in __event.contributors %}
+  {% unless result contains __contributor %}
+    {% assign result = result | push:__contributor %}
+  {% endunless %}
+{% endfor %}
+
+{% for __contributor in __event.speakers %}
+  {% unless result contains __contributor %}
+    {% assign result = result | push:__contributor %}
+  {% endunless %}
+{% endfor %}
+
+{% assign result = result | where_exp:'slug','slug != "tbd"' %}
+{% include fn-contributors-slugs.jk slugs=result %}

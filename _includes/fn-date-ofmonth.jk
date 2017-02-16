@@ -1,0 +1,15 @@
+{% assign __month = include.date | date: "%-m" %}
+{% case __month %}
+  {% when '1' %}{% assign result = "de Gener" %}
+  {% when '2' %}{% assign result = "de Febrer" %}
+  {% when '3' %}{% assign result = "de Març" %}
+  {% when '4' %}{% assign result = "d'Abril" %}
+  {% when '5' %}{% assign result = "de Maig" %}
+  {% when '6' %}{% assign result = "de Juny" %}
+  {% when '7' %}{% assign result = "de Juliol" %}
+  {% when '8' %}{% assign result = "d'Agost" %}
+  {% when '9' %}{% assign result = "de Setembre" %}
+  {% when '10' %}{% assign result = "d'Octubre" %}
+  {% when '11' %}{% assign result = "de Novembre" %}
+  {% when '12' %}{% assign result = "de Desembre" %}
+{% endcase %}

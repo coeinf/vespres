@@ -1,9 +1,0 @@
-{% assign event = include.event %}
-
-<a href="{{ site.baseurl }}{{ event.url }}" class="event-row">
-  <img src="{{ event.cover }}">
-  <div class="event-row-title">
-    {{ event.title }} &gt;
-    <small>{% include date.html date=event.date %}</small>
-  </div>
-</a>

@@ -1,6 +1,27 @@
 ---
-layout: page
+layout: default
 ---
-<div class="document">
-  {{ content }}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7">
+    {{ content }}
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+      <div class="hidden-xs hidden-sm">
+      <a class="twitter-timeline" href="https://twitter.com/{{site.twitter_username}}" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by {{site.twitter_username}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+{% include events-banner.html %}
+

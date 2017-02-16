@@ -1,0 +1,19 @@
+{% assign __track = include.track %}
+
+{% unless __track %}
+  {% assign __track = page.track %}
+{% endunless %}
+
+{% assign __events = site.posts | where:'track',__track %}
+
+{% for __event in __events %}
+  {% if __event == page %}
+    {% assign result_prev = __before %}
+  {% endif %}
+  {% if __before == page %}
+    {% assign result_next = __event %}
+    {% break %}
+  {% endif %}
+
+  {% assign __before = __event %}  
+{% endfor %}

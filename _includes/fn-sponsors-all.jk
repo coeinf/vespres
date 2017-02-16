@@ -1,0 +1,5 @@
+{% assign result = '' | split:'' %}
+{% for __sponsor_data in site.data.sponsors %}
+  {% assign __sponsor = __sponsor_data.[1] %}
+  {% assign result = result | push:__sponsor %}
+{% endfor %}

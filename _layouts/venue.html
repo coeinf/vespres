@@ -1,26 +1,114 @@
 ---
 layout: default
 ---
+
+{% assign _talks = site.events | where:'venue',page.slug %}
+
+{% include fn-next.jk pages=_talks %}
+{% assign _next_talk = result | first %}
+
+
 <div class="container">
   <div class="row">
-    <div class="col-7 col-m-12">
+    <div class="col-md-12">
+      {% comment %}TITLE{% endcomment %}
       <h1>{{ page.title }}</h1>
-      <main class="document">
-        <h3 style="margin-top: 0">
-          {{ page.address1 }}<br>{{ page.address2 }}
-        </h3>
-
-        {{ content }}
-      </main>
-    </div>
-    <div class="col-1"></div>
-    <div class="col-4 col-m-12">
-      <img src="{{ page.photo }}">
-
-      <h3>Localització:</h3>
-      <iframe src="{{ page.maps_isrc }}" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
   </div>
-  {% include next-event.html %}
+
+  <div class="row">
+    <div class="col-md-7">
+      {% comment %}MAIN IMAGE{% endcomment %}
+      {% include fn-image.jk image=page.image %}
+      {% assign _venue_image = result %}
+      <img src="{{ _venue_image }}" style="width: 100%;" aria-hidden="true">
+
+      {% comment %}DESCRIPTION{% endcomment %}
+      {% if page.description %}
+      <p class="lead margin-top-10" style="margin-bottom: 0">
+        {{ page.description }}
+      </p>
+      {% endif %}
+
+      {% comment %}CONTENT{% endcomment %}
+      <div class="panel panel-default margin-top-20">
+        <div class="panel-heading visible-xs-block visible-sm-block">
+            {{ page.address1 }}<br>
+            {{ page.address2 }}<br>
+        </div>
+        <div class="panel-body">
+          {{ content }}
+        </div>
+      </div>
+
+      {% comment %}LOCALITZACIO MAPA{% endcomment %}
+      <br>
+      <h2>Localització</h2>
+      <iframe src="{{ page.maps_isrc }}" style="width: 100%; height: 250px; border: none; margin-bottom: -5px;"></iframe>
+      <br>
+
+      {% include prev-next.html %}
+    </div>
+
+    <div class="col-md-4 col-md-offset-1">
+
+      {% if page.slug == 'tbd' %}
+      {% capture file_value %}---
+title: Nom del lloc
+image: {{ page.image }}
+address1: c/ Carrer, numero, pis/despatx
+address2: 08001 Població
+# obrir el google maps amb la adreça y copypastejar la url de embed
+maps_isrc: {{ page.maps_isrc }}
+---
+Descriu com arribar al lloc, 
+transports, parquings i altres propietats convenients.
+{% endcapture %}
+      <a class="btn btn-primary btn-lg btn-block" target="_blank" href="https://github.com/coeinf/vespres/new/master/_venues?&value={{ file_value | truncate: 4096 | url_encode }}">
+        Nou Lloc
+      </a>
+      <br>
+      {% endif %}
+
+      {% comment %}LOCALITZACIÓ QUICK{% endcomment %}
+      <div class="panel panel-default hidden-sm hidden-xs">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+          Adreça
+        </div>
+        <div class="panel-body">
+          <p>
+            {{ page.address1 }}<br>
+            {{ page.address2 }}
+          </p>
+        </div>
+      </div>
+
+      {% comment %}NEXT TALK{% endcomment %}
+      {% if _next_talk %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+          Propera xerrada
+        </div>
+        {% include event-image.html event=_next_talk small=true %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+  {% comment %}TALKS{% endcomment %}
+  <div class="row">
+    {% if _talks.size > 0 %}
+      <div class="col-md-12">
+        <hr>
+        <h2 style="margin-bottom: 0">Xerrades</h2>
+      </div>
+      {% include events-list-short.html events=_talks %}
+      <div class="col-md-12"><hr></div>
+    {% endif %}
+  </div>
 </div>
 
+{% include events-banner.html %}

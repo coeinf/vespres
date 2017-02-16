@@ -1,0 +1,7 @@
+{% assign __slugs = include.slugs %}
+
+{% assign result = '' | split:'' %}
+{% for __slug in __slugs %}
+  {% assign __contributor = site.contributors | where:"slug",__slug | first %}
+  {% assign result = result | push:__contributor %}
+{% endfor %}

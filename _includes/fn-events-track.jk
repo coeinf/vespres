@@ -1,0 +1,15 @@
+{% assign __track = include.track %}
+
+{% capture __track_path %}/{{ __track.slug }}/{% endcapture %}
+
+{% assign result = '' | split:'' %}
+{% for __event in site.events %}
+  
+  {% if __event.url contains __track_path %}
+    {% assign result = result | push:__event %}
+  {% elsif __event.tracks contains __track.slug %}
+    {% assign result = result | push:__event %}
+  {% endif %}
+
+{% endfor %}
+{% assign result = result | sort:'date' | reverse %}

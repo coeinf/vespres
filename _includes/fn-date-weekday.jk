@@ -1,0 +1,10 @@
+{% assign __week = include.date | date: "%-w" %}
+{% case __week %}
+  {% when '1' %} {% assign result = "Dilluns" %}
+  {% when '2' %} {% assign result = "Dimarts" %}
+  {% when '3' %} {% assign result = "Dimecres" %}
+  {% when '4' %} {% assign result = "Dijous" %}
+  {% when '5' %} {% assign result = "Divendres" %}
+  {% when '6' %} {% assign result = "Dissabte" %}
+  {% when '0' %} {% assign result = "Diumenge" %}
+{% endcase %}

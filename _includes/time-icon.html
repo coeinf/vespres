@@ -1,7 +1,38 @@
-{% assign date = include.date %}
+{% assign _date = include.date %}
+{% assign _color = include.color %}
+{% assign _scale = include.scale %}
 
-<time datetime="2014-09-20" class="icon">
-  <em>{% include date-weekday.html date=date %}</em>
-  <strong>{% include date-month.html date=date %}</strong>
-  <span>{{date | date:'%-d'}}</span>
+{% include fn-date-month.jk date=_date %}
+{% assign _month = result %}
+
+{% include fn-date-weekday.jk date=_date %}
+{% assign _weekday = result %}
+
+{% assign _event_year = _event.date | date: '%Y' %}
+{% assign _current_year = 'now' | date: '%Y' %}
+
+<time datetime="{{ _date | date:'%F' }}" 
+    class="icon {{ _color }}"
+    {% if _scale %}style="font-size: {{ _scale }}em;"{% endif %}>
+
+{% if _event_year < '2099' %}
+
+
+    {% if _current_year == _event_year %}
+      <em>{{ _weekday }}</em>
+      <span>{{_date | date:'%-d'}}</span>
+      <strong>{{ _month }}</strong>
+    {% else %}
+      <span>{{_date | date:'%-d'}}</span>
+      <em>{{ _month }}</em>
+      <strong>{{ _event_year }}</strong>
+    {% endif %}
+
+  </time>
+
+{% else %}
+    <strong></strong>
+    <span>TBD</span>
+{% endif %}
+
 </time>

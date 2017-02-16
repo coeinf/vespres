@@ -1,37 +1,35 @@
-<footer>
-  <div class="container">
-
+<footer class="margin-top-20">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-3 col-m-12">
-        <h3><a href="{{ site.baseurl }}/">Vespres al Col·legi</a></h3>
-        <a href="{{ site.baseurl }}/">Les xerrades</a><br>
-        <a href="{{ site.baseurl }}/sponsors">Sponsors</a><br>
-        <a href="{{ site.baseurl }}/activities">Altres activitats</a><br>
-        <br>
-        <h3><a href="http://enginyeriainformatica.cat">El Col·legi</a></h3>
-      </div>
+      <div class="col-md-12 text-center">
+        <br><br><br>
+        <div class="well">
+          
+          <a href="{{ site.baseurl }}/" 
+            class="text-muted">Home</a> ·
+          <a href="https://coeinf.cat" target="_blank" 
+            class="text-muted">Col·legi</a> ·
+          <a href="https://github.com/coeinf" target="_blank" 
+            class="text-muted">GitHub</a> ·
+          <a href="https://twitter.com/coeinf" target="_blank" 
+            class="text-muted">Twitter</a> ·
 
-      <div class="col-3 col-m-12">
-        <h3><a href="{{ site.baseurl }}/people">Col·laboradors:</a></h3>
-        {% assign people = site.people | sample:5 %}
-        {% for person in people %}
-        <a href="{{ site.baseurl }}{{ person.url }}">{{ person.title }}</a><br>
-        {% endfor %}
-        <a href="{{ site.baseurl }}/people">Veure tots &gt;</a>
-      </div>
+          <a href="https://github.com/coeinf/vespres/edit/master/{{ page.path }}"
+            target="_blank" class="text-muted">Edit Me</a>
 
-      <div class="col-3 col-m-12">
-        <h3><a href="{{ site.baseurl }}/friends">Amics:</a></h3>
-        {% assign friends = site.friends | sample:5 %}
-        {% for friend in friends  %}
-        <a href="{{ site.baseurl }}{{ friend.url }}">{{ friend.title }}</a><br>
-        {% endfor %}
-        <a href="{{ site.baseurl }}/friends">Veure tots &gt;</a>
-      </div>
+{% if page.layout == "entry" or page.layout == "post" %}
+{% capture file_value %}---
+tags:
+  - {{ page.slug }}{% for tag in page.tags reverse %}
+  - {{ tag }}{% endfor %}
+---
+{% endcapture %}
+  |
+  <a href="https://github.com/drpicox/drpicox.github.io/new/master/{{ page.path | split:'.' | pop | join:'.' }}?&value={{ file_value | truncate: 4096 | url_encode }}"
+    target="_blank">New Entry</a>
+  {% endif %}
 
-      <div class="col-3 col-m-12">
-        <h3><a href="{{ site.baseurl }}/about/">En quant...</a></h3>
-        <h3><a href="{{ site.baseurl }}/codi-de-conducta/">Codi de conducta</a></h3>
+        </div>
       </div>
     </div>
   </div>

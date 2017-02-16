@@ -2,7 +2,7 @@
 layout: friend
 title: Barcelona BlockChain
 cover: https://a248.e.akamai.net/secure.meetupstatic.com/photos/theme_head/1/2/b/0/full_7144784.jpeg
-icon: https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/d/b/3/9/600_451376121.jpeg
+image: https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/d/b/3/9/600_451376121.jpeg
 icon-ratio: 75%
 twitter: BlockchainBCN
 meetup: barcelonablockchain

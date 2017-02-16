@@ -1,0 +1,20 @@
+{% assign _contributors = include.contributors %}
+
+{% if _contributors.size > 0 %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <hr>
+        <h1>Contribuïdors</h1>
+        <hr>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        {% include contributors-list.html contributors=_contributors %}
+      </div>
+    </div>
+  </div>
+{% endif %}

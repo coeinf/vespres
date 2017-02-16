@@ -1,0 +1,34 @@
+{% assign _date = include.date %}
+{% assign _short = include.short %}
+
+{% assign _event_year = _event.date | date: '%Y' %}
+{% assign _current_year = 'now' | date: '%Y' %}
+
+{% if _event_year < '2099' %}
+
+  {% include fn-date-month.jk date=_date %}
+  {% assign _month = result %}
+
+  {% include fn-date-ofmonth.jk date=_date %}
+  {% assign _ofmonth = result %}
+
+  {% include fn-date-weekday.jk date=_date %}
+  {% assign _weekday = result %}
+
+  {% assign _day = _event.date | date:'%-d' %}
+
+  <time datetime="{{ _date | date:'%F' }}">
+  {% if _short %}
+    {% if _event_year == _current_year %}
+      {{ _day }} {{ _ofmonth }}.
+    {% else %}
+      {{ _day }} {{ _month }} {{ _event_year }}.
+    {% endif %}
+  {% else %}
+    {{ _weekday }}, {{ _day }} {{ _ofmonth }} del {{ _event_year }}.
+  {% endif %}
+  </time>
+
+{% else %}
+  <time>TBD.</time>
+{% endif %}

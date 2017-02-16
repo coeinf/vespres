@@ -1,39 +1,29 @@
-# Evento
+# Vespres al Col·legi
 
-Evento is a minimal, responsive theme for Jekyll. The projects allows people, groups or companies to host and show a list future and past events.
+## Setup
 
-### Features
+Requires ruby and [bundler](http://bundler.io/).
 
-* Clean layout
-* Responsive layout
-* Shows future and past events
-* Easy for people to add events
+Clone the repository:
 
----
+```bash
+$ git clone ...
+```
 
-### Install and Test
+Enter to the directory and install dependencies:
 
-1. Download or clone repo `git clone git@github.com:boyney123/evento.git`
-2. Enter the folder: `cd evento/`
-4. Start Jekyll server: `jekyll serve`
+```bash
+$ cd vespres
+$ bundle install
+```
 
-Access via: [http://localhost:4000](http://localhost:4000)
 
----
+## Preview
 
-### Demo and Download
+Use bundler to execute jekyll:
 
-[Demo](http://evento.davidboyne.co.uk)
+```bash
+$ bundle exec jekyll s -H 0.0.0.0 --incremental  --baseurl '' -P 4002
+```
 
-[Download](https://github.com/boyney123/evento/archive/master.zip)
-
-### Screen Shot 1
-![Evento - free Jekyll theme](/screenshot.png)
-### Screen Shot 2
-![Evento - free Jekyll theme](/screenshot2.png)
-
----
-
-### Copyright and license
-
-It is under [the MIT license](/LICENSE).
+Open the browser in [localhost:4002](http://localhost:4002) to see the result.

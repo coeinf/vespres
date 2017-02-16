@@ -1,10 +1,39 @@
 ---
-layout: page
-backtext: Altres activitats
-backurl: /activities
+layout: document
 ---
-<div class="document">
-  {{ content }}
+{% include fn-image.jk image=page.image %}
+<img src="{{ result }}" aria-hidden="true">
+
+<div class="margin-top-20">
+{{ content }}
 </div>
 
-{% include prev-next.html %}
+
+{% assign _activities = site.activities | where_exp:'activity','activity != page' %}
+{% include fn-next.jk pages=_activities %}
+{% assign _activities = result | sort:'date' %}
+
+{% if _activities.size > 0 %}
+<br>
+<hr>
+<h2>Altres activitats</h2>
+{% for _activity in _activities %}
+  <div class="row">
+    {% include fn-image.jk image=_activity.image %}
+    {% assign _activity_image = result %}
+
+    <div class="col-xs-3">
+      <a href="{{ site.baseurl }}{{ _activity.url }}">
+        <img src="{{ _activity_image }}" class="img-responsive margin-top-10" aria-hidden="true">
+      </a>
+    </div>
+    <div class="col-xs-9">
+      <h4>{{ _activity.title }}</h4>
+      <p>{{ _activity.description | default:_activity.excerpt | strip_html }}</p>
+      <a href="{{ site.baseurl }}{{ _activity.url }}">Llegir més »</a>
+    </div>
+  </div>
+{% endfor %}
+<hr>
+{% endif %}
+

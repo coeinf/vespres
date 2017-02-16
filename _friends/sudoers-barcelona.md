@@ -1,8 +1,7 @@
 ---
 layout: friend
 title: Sudoers Barcelona
-cover: https://pbs.twimg.com/profile_images/2835463180/2ae13d3b54675811950fa76b16482201.png
-icon: https://pbs.twimg.com/profile_images/2835463180/2ae13d3b54675811950fa76b16482201.png
+image: https://pbs.twimg.com/profile_images/2835463180/2ae13d3b54675811950fa76b16482201.png
 icon-ratio: 75%
 twitter: sudoersbcn
 meetup: sudoersbcn

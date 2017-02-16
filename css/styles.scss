@@ -2,69 +2,67 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-// see https://material.io/guidelines/style/color.html#color-color-palette
-//deep purpple adapted to $brand-primary: #ab0239; h:340
-$primary-100: hsl(340,46,82);
-$primary-500: hsl(340,63,42);
-$primary-700: hsl(330,67,37);
+$brand-primary: #ac033a;
+$icon-font-path: "../assets/fonts/bootstrap/";
 
-// yellow
-$accent-200: #FFFF00;
-$accent-100: #FFFF8D;
-$accent-400: #FFEA00;
+@import "bootstrap";
 
-
-$primary-text: rgba(black, 0.87);
-$secondary-text: rgba(black, 0.54);
-$disabled-text: rgba(black, 0.38);
-$hint-text: $disabled-text;
-$divider-text: rgba(black, 0.12);
-
-$primary-white-text: rgba(white, 1.00);
-$secondary-white-text: rgba(white, 0.70);
-$disabled-white-text: rgba(white, 0.50);
-$hint-white-text: $disabled-white-text;
-$divider-white-text: rgba(white, 0.12);
-
-$primary-500-text: rgba($primary-500, alpha($primary-text));
-
-$z1-shadow: 0 1px 2px rgba(black, 0.35);
-$z2-shadow: 0 2px 5px rgba(black, 0.3);
-$z3-shadow: 0 3px 8px rgba(black, 0.26);
-
-$box-size: 48px;
-$box-glutter: 8px;
-$box-full-size: $box-size + $box-glutter;
-
-$desktop-min: 768px; // -1
-$mobile-max: $desktop-min - 1; 
-
-a, a:hover, a:visited, a:active, a:focus { color: $primary-500-text; }
-img { max-width: 100%; }
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 72px 0 0;
-  font-family: "apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: #bbb; // trick for footer
-  color: $secondary-text;
-  font-weight: 200;
-  font-size: 16px;
-}
-.content { background: #eee; padding-bottom: 48px; } // trick for footer
-
-@import "btn";
-@import "card";
-@import "container";
-@import "cover";
-@import "document";
-@import "event-row";
-@import "footer";
-@import "grid";
-@import "list";
-@import "media";
-@import "navbar";
-@import "text";
 @import "time";
+
+@import "activities";
+@import "contributors";
+@import "events";
+@import "friends";
+@import "sponsors";
+
+.panel-body p:last-child {
+  margin-bottom: 0;
+}
+
+.collapse-reverse-inline {
+  display: inline;
+
+  &.in {
+    display: none;
+  }
+}
+
+@media (max-width: $screen-sm-min) { 
+  .xs-smaller {
+    font-size: 65%;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .border-md-right {
+    border-right: 1px solid #eee;
+  }
+}
+
+@media (max-width: $screen-sm-min) { 
+  .text-xs-left {
+    text-align: left;
+  }
+}
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+@media (max-width: $screen-sm-min) { 
+  .margin-xs-top-10 {
+    margin-top: 10px;
+  }
+  .margin-xs-top-20 {
+    margin-top: 20px;
+  }
+}
 

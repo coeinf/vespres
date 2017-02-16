@@ -1,0 +1,22 @@
+{% assign _contributor = include.contributor %}
+{% assign _scale = include.scale %}
+{% assign _tabindex = include.tabindex %}
+
+{% unless _contributor.image %}
+  {% assign _contributor = site.contributors | where:"slug",_contributor | first %}
+{% endunless %}
+
+{% include fn-image.jk image=_contributor.image %}
+{% assign _image = result %}
+
+<a href="{{ site.baseurl }}{{ _contributor.url }}" 
+  class="contributor-image" 
+  title="{{ _contributor.title }}"
+  style="
+    background-image: url({{ _image }});
+    {% if _scale %}font-size: {{ _scale }}em; {% endif %}
+    "
+  {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
+
+    <span class="sr-only">{{ _contributor.title }}</span>
+</a>

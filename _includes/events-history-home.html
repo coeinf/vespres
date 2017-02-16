@@ -1,0 +1,17 @@
+{% assign _events = include.events %}
+
+
+{% if prev_events.size > 0 %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <hr>
+        <h1>Esdeveniments passats</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="margin-top-20">
+  {% include events-list-short.html events=_events %}
+  </div>
+{% endif %}

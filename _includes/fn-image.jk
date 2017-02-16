@@ -1,0 +1,10 @@
+{% assign __image = include.image %}
+
+{% assign __protocol = __image | slice: 0,4 %}
+{% assign __double = __image | slice: 0,2 %}
+
+{% if __protocol == "http" or __double == "//" %}
+  {% assign result = __image %}
+{% else %}
+  {% capture result %}{{ site.baseurl }}{{ __image }}{% endcapture %}
+{% endif %}

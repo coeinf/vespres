@@ -1,0 +1,13 @@
+{% assign __event = include.event %}
+
+{% assign result = '' | split:'' %}
+{% for __track in site.tracks %}
+  {% capture __track_path %}/{{ __track.slug }}/{% endcapture %}
+
+  {% if __event.url contains __track_path %}
+    {% assign result = result | push:__track %}
+  {% elsif __event.tracks contains __track.slug %}
+    {% assign result = result | push:__track %}
+  {% endif %}
+
+{% endfor %}

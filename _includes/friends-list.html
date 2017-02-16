@@ -1,0 +1,21 @@
+{% assign _friends = include.friends %}
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <div class="friends-list">
+
+{% for _friend in _friends %}
+  {% include fn-image.jk image=_friend.image %}
+  {% assign _friend_image = result %}
+
+  <a href="{{ site.baseurl }}{{ _friend.url }}">  
+    <img src="{{ _friend_image }}" alt="{{ _friend.name }}">
+    <p>{{ _friend.title }}</p>
+  </a>
+{% endfor %}
+
+      </div>
+    </div>
+  </div>
+</div>

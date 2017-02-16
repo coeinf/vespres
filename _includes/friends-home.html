@@ -1,0 +1,15 @@
+{% assign _friends = include.friends %}
+
+{% if _friends.size > 0 %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <hr>
+        <h1>Meetups Afins</h1>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  {% include friends-list.html friends=_friends %}
+{% endif %}

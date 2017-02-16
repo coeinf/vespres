@@ -1,0 +1,11 @@
+{% assign _events = include.events %}
+
+<div class="container">
+  <div class="row">
+    {% for _event in _events %}
+    <div class="col-xs-6 col-sm-4 col-lg-3 margin-top-20">
+      {% include event-image.html event=_event small=true %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

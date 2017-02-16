@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-12">
+
+  <ul class="nav nav-pills nav-justified">
+    <li {% if page.url == '/' %}class="active"{% endif %}>
+      <a href="{{ site.baseurl }}/">
+        <span class="sr-only">Canal</span>        
+        Tots
+        {% if page.url == '/' %}<span class="sr-only">Actiu</span>{% endif %}
+               
+      </a>
+    </li>
+    {% for _track in site.tracks %}
+    <li {% if page.url == _track.url %}class="active"{% endif %}>
+      <span class="sr-only">Canal</span>       
+      <a href="{{ site.baseurl }}{{ _track.url }}">{{ _track.title }}</a>
+      {% if page.url == _track.url %}<span class="sr-only">Actiu</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  </div>
+  </div>
+</div>

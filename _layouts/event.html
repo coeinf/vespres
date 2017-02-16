@@ -106,6 +106,30 @@ layout: default
         {% endif %}
       </div>
 
+
+      {% comment %}CLONE TALK{% endcomment %}
+{% capture file_value %}---
+title: "{{ page.title }}"
+image: {{ page.image }}
+date: 2999-12-31 # tbd
+start_time: {{ page.start_time }}
+end_time: {{ page.end_time }}
+venue: {{ page.venue }}
+speakers: {% for _speaker in page.speakers %}
+  - {{ _speaker }}{% endfor %}
+tracks: {% for _track in page.tracks %}
+  - {{ _track }}{% endfor %}
+{% if page.sponsors.size > 0 %}sponsors: {% for _sponsor in page.sponsors %}
+  - {{ _sponsor }}{% endfor %}{% endif %}
+{% if page.description %}description: >
+  {{ page.description }}{% endif %}
+---
+{{ page.content }}
+{% endcapture %}
+    <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://github.com/coeinf/vespres/new/master/_contributors?&value={{ file_value | truncate: 4096 | url_encode }}">
+      Clone Event
+    </a>
+
     </div>
   </div>
 

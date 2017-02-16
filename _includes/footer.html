@@ -9,25 +9,13 @@
             class="text-muted">Home</a> ·
           <a href="https://coeinf.cat" target="_blank" 
             class="text-muted">Col·legi</a> ·
-          <a href="https://github.com/coeinf" target="_blank" 
-            class="text-muted">GitHub</a> ·
+          <a href="https://github.com/coeinf/vespres" target="_blank" 
+            class="text-muted">Fork Me</a> ·
           <a href="https://twitter.com/coeinf" target="_blank" 
             class="text-muted">Twitter</a> ·
 
           <a href="https://github.com/coeinf/vespres/edit/master/{{ page.path }}"
             target="_blank" class="text-muted">Edit Me</a>
-
-{% if page.layout == "entry" or page.layout == "post" %}
-{% capture file_value %}---
-tags:
-  - {{ page.slug }}{% for tag in page.tags reverse %}
-  - {{ tag }}{% endfor %}
----
-{% endcapture %}
-  |
-  <a href="https://github.com/drpicox/drpicox.github.io/new/master/{{ page.path | split:'.' | pop | join:'.' }}?&value={{ file_value | truncate: 4096 | url_encode }}"
-    target="_blank">New Entry</a>
-  {% endif %}
 
         </div>
       </div>

@@ -70,7 +70,7 @@ layout: default
 
           {% if page.github %}
             <strong>GitHub</strong>: 
-              <a href="{{ page.github }}" target="_blank">{{ page.github }}</a>.
+              <a href="http://github.com/{{ page.github }}" target="_blank">{{ page.github }}</a>.
             <br>
           {% endif %}
         </div>
@@ -87,6 +87,23 @@ layout: default
       {% if page.twitter %}
       <a class="twitter-timeline" href="https://twitter.com/{{page.twitter}}" style="height: 440px; display: block;" data-height="440" data-chrome="nofooter">Tweets by {{page.twitter}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       {% endif %}
+
+      {% comment %}PROPOSA nou friend{% endcomment %}
+      {% capture file_value %}---
+title: Nom del Meetup
+image: https://placeimg.com/800/450/arch
+# website: url
+# twitter: @nom
+# github: @nom
+# meetup: @nom
+# meetup_widget: https://...
+---
+Explica perque ens interessa el teu meetup.
+{% endcapture %}
+      <a class="btn btn-default btn-lg btn-block" target="_blank" href="https://github.com/coeinf/vespres/new/master/_friends?&value={{ file_value | truncate: 4096 | url_encode }}">
+        Proposa Meetup
+      </a>
+      <br>
     </div>
   </div>
 

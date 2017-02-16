@@ -1,5 +1,4 @@
 ---
-layout: activity
 title:  "22ª Nit de les telecomunicacions i la informàtica"
 image: "http://enginyeriainformatica.cat/wp-content/uploads/2016/12/22-nit-telecos-i-informatics-BASIC.jpg"
 date:   2017-02-23

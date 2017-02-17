@@ -3,7 +3,7 @@
   <div class="col-md-12">
 
   <ul class="nav nav-pills nav-justified">
-    <li {% if page.url == '/' %}class="active"{% endif %}>
+    <li class="{% if page.url == '/' %}active{% endif %}">
       <a href="{{ site.baseurl }}/">
         <span class="sr-only">Canal</span>        
         Tots
@@ -12,7 +12,10 @@
       </a>
     </li>
     {% for _track in site.tracks %}
-    <li {% if page.url == _track.url %}class="active"{% endif %}>
+    <li class="
+        {% if _track.url == page.url %}active{% endif %}
+        {% if _track.level %}nav-pill-{{ _track.level }}{% endif %}
+        ">
       <span class="sr-only">Canal</span>       
       <a href="{{ site.baseurl }}{{ _track.url }}">{{ _track.title }}</a>
       {% if page.url == _track.url %}<span class="sr-only">Actiu</span>{% endif %}

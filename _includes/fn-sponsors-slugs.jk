@@ -3,5 +3,7 @@
 {% assign result = '' | split:'' %}
 {% for __slug in __slugs %}
   {% assign __sponsor = site.data.sponsors.[__slug] %}
-  {% assign result = result | push:__sponsor %}
+  {% if __sponsor %}
+    {% assign result = result | push:__sponsor %}
+  {% endif %}
 {% endfor %}

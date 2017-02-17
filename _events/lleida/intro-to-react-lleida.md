@@ -3,6 +3,8 @@
 title:  "ReactJS"
 tracks:
   - lleida
+  - girona
+level: advanced
 image: "https://placeimg.com/800/450/tech"
 cover_ratio: 38%
 date:   2017-03-28

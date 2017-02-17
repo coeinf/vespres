@@ -1,11 +1,12 @@
 {% assign _events = include.events %}
+{% assign _hide_tracks = include.hide_tracks %}
 
 <div class="margin-top-20 hidden-xs">
   {% include tracks-nav.html %}  
 </div>
 
 <div class="margin-top-20">
-  {% include events-header.html events=_events %}
+  {% include events-header.html events=_events hide_tracks=_hide_tracks %}
 </div>
 
 <div class="container">
@@ -19,6 +20,6 @@
 </div>
 
 <div class="margin-top-20">
-  {% include events-list.html events=_events %}
+  {% include events-list.html events=_events hide_tracks=_hide_tracks %}
 </div>
 

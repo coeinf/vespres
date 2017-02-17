@@ -119,6 +119,7 @@ speakers: {% for _speaker in page.speakers %}
   - {{ _speaker }}{% endfor %}
 tracks: {% for _track in page.tracks %}
   - {{ _track }}{% endfor %}
+{% if page.level %}level: {{ page.level }}{% else %}# level: advanced{% endif %}
 {% if page.sponsors.size > 0 %}sponsors: {% for _sponsor in page.sponsors %}
   - {{ _sponsor }}{% endfor %}{% endif %}
 {% if page.description %}description: >

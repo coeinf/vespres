@@ -1,8 +1,15 @@
 {% assign _event = include.event %}
+{% assign _class = include.class %}
 {% assign _small = include.small %}
+{% assign _speakers_bottom = include.speakers_bottom %}
 {% assign _tabindex = include.tabindex %}
+{% assign _hide_time = include.hide_time %}
 {% assign _hide_title = include.hide_title %}
+{% assign _hide_tracks = include.hide_tracks %}
 {% assign _hide_speakers = include.hide_speakers %}
+
+{% include fn-tracks-event.jk event=_event %}
+{% assign _tracks = result %}
 
 {% assign _venue = site.venues | where:"slug",_event.venue | first %}
 
@@ -12,15 +19,18 @@
 {% assign _event_year = _event.date | date: '%Y' %}
 {% assign _current_year = 'now' | date: '%Y' %}
 
-<div class="event-image--wrapper">
+<div class="event-image--wrapper {{ class }}
+    {% if _small %}event-image-small{% endif %} 
+    {% if _speakers_bottom %}event-image-speakers-bottom{% endif %}
+    ">
   <a href="{{ site.baseurl }}{{ _event.url }}" 
-    class="event-image {% if _small %}event-image-small{% endif %} xs-smaller" 
+    class="event-image xs-smaller" 
     style="background-image: url({{ _image }})"
     {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
 
       <div class="event-image--caption">
 
-        {% unless _small %}
+        {% unless _hide_time %}
         {% include time-icon.html date=_event.date color='white' scale=6 %}
         {% endunless %}
 
@@ -28,25 +38,36 @@
         <div class="event-image--title">
           <small class="xs-smaller">{{ _event.title }}</small>
         </div>
-        {% endunless %}
         <div class="event-image--subtitle {% if _small %}hidden-xs{% endif %}"> 
-          {% if _small %}
+          {% if _hide_time %}
             {% include time-text.html date=_event.date short=true %}
           {% else %}
           {{ _event.start_time }}. 
           {% endif %}
           {{ _venue.title }}.
         </div>
+        {% endunless %}
       </div>
 
   </a>
-  {% unless _small or _hide_speakers %}
+  {% unless _hide_speakers %}
     <div class="event-image--speakers hidden-xs">
     {% for _speaker in _event.speakers %}
       {% if _speaker != 'tbd' %}
       {% include contributor-image.html contributor=_speaker scale=4 tabindex=_tabindex %}
       {% endif %}
     {% endfor %}
+    </div>
+  {% endunless %}
+  {% unless _hide_tracks %}
+    <div class="event-image--track xs-smaller">
+      {% for _track in _tracks %}
+      <a href="{{ site.baseurl }}{{ _track.url }}" 
+          class="label label-{{ _event.level | default:_track.level | default:'primary' }}"
+          {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
+        {{ _track.title }}
+      </a>
+      {% endfor %}
     </div>
   {% endunless %}
 </div>

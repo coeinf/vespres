@@ -2,7 +2,7 @@
 
 ## Afegir contingut
 
-- [Nou track](https://github.com/coeinf/vespres/new/master/_tracks?&value=---%0Atitle%3A%20Nom%20del%20track%0A%23sponsors%3A%0A%23%20%20-%20un-bon-sponsor%0A---%0Abuit%0A%20%20%20)
+- [Nou track](https://github.com/coeinf/vespres/new/master/_tracks?&value=---%0Atitle%3A%20Nom%20del%20track%0A%23level%3A%20advanced%0A%23sponsors%3A%0A%23%20%20-%20un-bon-sponsor%0A---%0Abuit%0A%20%20%20)
 - [Nova Activitat](https://github.com/coeinf/vespres/new/master/_activities?&value=---%0Atitle%3A%20Nom%20de%20la%20activitat%0Aimage%3A%20https%3A%2F%2Fplaceimg.com%2F800%2F450%2Fnature%0Adate%3A%202099-12-31%20%23%20tbd%0A---%0A%0AInformaci%C3%B3%20sobre%20la%20activitat.%0A%20%20%20)
 - Nou Ponent: Botó al contributor [TBD](http://coeinf.github.io/vespres/contributors/tbd)
 - Nou Esdeveniment: Botó als [tracks](http://coeinf.github.io/vespres/)

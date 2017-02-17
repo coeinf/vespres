@@ -1,6 +1,7 @@
 ---
 #event information
 title:  "Getting started with AWS"
+level: advanced
 tracks:
   - girona
 image: "https://placeimg.com/800/450/arch"

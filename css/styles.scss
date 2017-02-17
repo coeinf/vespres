@@ -15,6 +15,10 @@ $icon-font-path: "../assets/fonts/bootstrap/";
 @import "friends";
 @import "sponsors";
 
+.label.label-advanced, .nav-pills > li.nav-pill-advanced.active > a {
+  background: adjust-hue(lighten(desaturate($brand-primary, 30%), 20%), -90);
+}
+
 .panel-body p:last-child {
   margin-bottom: 0;
 }

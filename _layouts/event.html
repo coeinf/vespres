@@ -91,7 +91,7 @@ layout: default
             <a href="{{ site.baseurl }}{{ _venue.url }}">
           {% include fn-image.jk image=_venue.image %}
           {% assign _venue_image = result %}
-          <img src="{{ _venue_image }}" class="img-responsive" aria-hidden="true">
+          <img data-src="{{ _venue_image }}" class="lazy img-responsive" aria-hidden="true">
             </a>
           </p>
         </div>

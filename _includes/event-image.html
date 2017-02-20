@@ -24,8 +24,8 @@
     {% if _speakers_bottom %}event-image-speakers-bottom{% endif %}
     ">
   <a href="{{ site.baseurl }}{{ _event.url }}" 
-    class="event-image xs-smaller" 
-    style="background-image: url({{ _image }})"
+    class="lazy event-image xs-smaller" 
+    data-src="{{ _image }}"
     {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
 
       <div class="event-image--caption">

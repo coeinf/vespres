@@ -8,8 +8,8 @@
   {% assign _contributor_image = result %}
 
   <a href="{{ site.baseurl }}{{ _contributor.url }}">    
-    <div class="contributor-image"
-      style="background-image: url({{ _contributor_image }});"
+    <div class="lazy contributor-image"
+      data-src="{{ _contributor_image }}"
       ></div>
     <p>{{ _contributor.title }}</p>
   </a>

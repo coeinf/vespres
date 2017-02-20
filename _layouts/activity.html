@@ -2,7 +2,7 @@
 layout: document
 ---
 {% include fn-image.jk image=page.image %}
-<img src="{{ result }}" aria-hidden="true">
+<img class="lazy" data-src="{{ result }}" aria-hidden="true">
 
 <div class="margin-top-20">
 {{ content }}
@@ -24,7 +24,7 @@ layout: document
 
     <div class="col-xs-3">
       <a href="{{ site.baseurl }}{{ _activity.url }}">
-        <img src="{{ _activity_image }}" class="img-responsive margin-top-10" aria-hidden="true">
+        <img data-src="{{ _activity_image }}" class="lazy img-responsive margin-top-10" aria-hidden="true">
       </a>
     </div>
     <div class="col-xs-9">

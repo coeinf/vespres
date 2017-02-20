@@ -8,7 +8,7 @@
         <a href="{{ _sponsor.website }}" tabindex="-1" target="_blank">
           {% include fn-image.jk image=_sponsor.image %}
           {% assign _sponsor_image = result %}
-          <img src="{{ _sponsor_image }}" alt="{{ _sponsor.name }}">
+          <img class="lazy" data-src="{{ _sponsor_image }}" alt="Sponsor logo: {{ _sponsor.name }}">
         </a>
         {% endfor %}
       </div>

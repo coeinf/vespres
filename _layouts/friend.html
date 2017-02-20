@@ -15,7 +15,7 @@ layout: default
       {% comment %}MAIN IMAGE{% endcomment %}
       {% include fn-image.jk image=page.image %}
       {% assign _image = result %}
-      <img src="{{ _image }}" style="width: 100%;" aria-hidden="true">
+      <img class="lazy" data-src="{{ _image }}" style="width: 100%;" aria-hidden="true">
 
       {% comment %}DESCRIPTION{% endcomment %}
       {% if page.description %}

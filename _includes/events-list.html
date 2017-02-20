@@ -20,35 +20,6 @@
       <div class="hidden-xs col-sm-5 col-lg-4 col-lg-offset-1">
         <div class="event-image--wrapper">
           {% include event-image.html event=_event small=true hide_time=true hide_title=true speakers_bottom=true %}
-          {% comment %}IMAGE{ % endcomment % }
-          <a href="{{ site.baseurl }}{{ _event.url }}" 
-            class="event-image event-image-small"
-            style="background-image: url({{ _event_image }})"
-            tabindex="-1"></a>
-
-          { % comment %}SPEAKERS (not XS){ % endcomment % }
-          <div class="event-image--caption text-right hidden-xs" aria-hidden="true">
-            {% for _speaker in _event.speakers %}
-              {% if _speaker != 'tbd' %}
-                &nbsp;
-                {% include contributor-image.html contributor=_speaker scale=3 tabindex="-1" %}
-              {% endif %}
-            {% endfor %}
-          </div>
-
-          { % comment %}TRACK{ % endcomment % }
-          {% unless _hide_tracks %}
-            <div class="event-image--track xs-smaller">
-              {% for _track in _tracks %}
-              <a href="{{ site.baseurl }}{{ _track.url }}" class="label 
-                  label-{{ _event.level | default:_track.level | default:'primary' }} 
-                  {% unless _small %}label-lg{% endunless %}">
-                {{ _track.title }}
-              </a>
-              {% endfor %}
-            </div>
-          {% endunless %}
-          {% endcomment %}
         </div>
       </div>
 

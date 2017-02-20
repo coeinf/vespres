@@ -10,7 +10,7 @@
   {% assign _friend_image = result %}
 
   <a href="{{ site.baseurl }}{{ _friend.url }}">  
-    <img src="{{ _friend_image }}" alt="{{ _friend.name }}">
+    <img class="lazy" data-src="{{ _friend_image }}" alt="Friendly meetup: {{ _friend.name }}">
     <p>{{ _friend.title }}</p>
   </a>
 {% endfor %}

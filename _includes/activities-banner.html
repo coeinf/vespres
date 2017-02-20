@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-sm-3">
       <div class="activities-banner--logo">
-        <img src="{{ site.baseurl }}/assets/images/vespres-logo.png">
+        <img class="lazy" data-src="{{ site.baseurl }}/assets/images/vespres-logo.png">
       </div>
     </div>
     <div class="col-sm-9 col-lg-8">
@@ -22,8 +22,8 @@
                 {% include fn-image.jk image=_activity.image %}
                 {% assign _activity_image = result %}
 
-                <div class="activities-banner--image"
-                  style="background-image: url({{ _activity_image }})"
+                <div class="lazy activities-banner--image"
+                  data-src="{{ _activity_image }}"
                   ></div>
 
                 <div class="activities-banner--body">

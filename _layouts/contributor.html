@@ -15,8 +15,8 @@ layout: default
       <div class="pull-left" style="width: 100%; max-width: 150px; margin-right: 20px; margin-bottom: 20px">
       {% include fn-image.jk image=page.image %}
       {% assign _image = result %}
-        <div class="contributor-image contributor-image-block pull-right"
-          style="background-image: url({{ _image }});"
+        <div class="lazy contributor-image contributor-image-block pull-right"
+          data-src="{{ _image }}"
           ></div>
       </div>
 

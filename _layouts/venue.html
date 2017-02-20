@@ -21,7 +21,7 @@ layout: default
       {% comment %}MAIN IMAGE{% endcomment %}
       {% include fn-image.jk image=page.image %}
       {% assign _venue_image = result %}
-      <img src="{{ _venue_image }}" style="width: 100%;" aria-hidden="true">
+      <img class="lazy" data-src="{{ _venue_image }}" style="width: 100%;" aria-hidden="true">
 
       {% comment %}DESCRIPTION{% endcomment %}
       {% if page.description %}

@@ -1,0 +1,37 @@
+{% capture file_value %}---
+title: Nom de la Xerrada
+image: https://placeimg.com/800/450/tech
+date: 2999-12-31 # tbd
+start_time: 19:00h
+end_time: 21:00h
+speakers: 
+  - tbd
+venue: tbd
+# level: advanced
+# sponsors:
+#   - a-good-sponsor 
+# description: >
+#   Una descripció
+---
+Explicació de l'esdeveniment,
+i del target objectiu, incloent el nivell.
+
+Ordre del dia
+-------------
+
+- **19:00h** Benvinguda
+- **19:10h** Presentació
+- **19:20h** Ponència
+- **20:00h** Torn de preguntes
+- **20:20h** Comiat
+- **20:30h** Networking i cerveses
+- **21:00h** Per als mes atrevits, marxem a sopar amb els ponents
+{% endcapture %}
+
+{% if page.layout == 'track' %}
+{% assign _track_slug = page.slug %}
+{% else %}
+{% assign _track_slug = 'barcelona' %}
+{% endif %}
+
+{% capture result %}https://github.com/coeinf/vespres/new/master/_events/{{ _track_slug }}?&value={{ file_value | truncate: 4096 | url_encode }}{% endcapture %}

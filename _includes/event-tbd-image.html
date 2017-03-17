@@ -1,6 +1,9 @@
 {% assign _tabindex = include.tabindex %}
+{% include fn-event-tbd-href.jk %}
+{% assign _event_tbd_href = result %}
 
-<a href="{{ include.href }}" target="_blank" class="event-image event-image-tbd event-image-small" 
+
+<a href="{{ _event_tbd_href }}" target="_blank" class="event-image event-image-tbd event-image-small" 
     {% if _tabindex %}tabindex="{{ _tabindex }}"{% endif %}>
   <div class="event-image--caption">
     <div class="event-image--title">

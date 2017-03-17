@@ -6,7 +6,7 @@ layout: default
 {% assign _tracks = result %}
 
 {% assign _current_date = 'now' | date: '%s' %}
-{% capture _event_date %}{{_event.date | date: '%s' }}{% endcapture %}
+{% capture _event_date %}{{ page.date | date: '%s' }}{% endcapture %}
 {% if _event_date >= _current_date %}
   {% assign _event_active = true %}
 {% else %}
@@ -60,17 +60,18 @@ layout: default
          Quan
         </div>
         <div class="panel-body">
+
           {% unless _event_active %}
           <p class="text-danger"><strong>Avís</strong>: l'esdeveniment ha passat.</p>
           {% endunless %}
 
 
           <strong>Dia</strong>: 
-            {% include time-text.html date=_event.date %}
+            {% include time-text.html date=page.date %}
             <br>
 
           <strong>Hora</strong>: 
-            de {{ _event.start_time }} a {{ _event.end_time }}.
+            de {{ page.start_time }} a {{ page.end_time }}.
           
         </div>
       </div>

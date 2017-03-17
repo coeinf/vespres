@@ -1,6 +1,6 @@
 ---
 title: Què és el blockchain i què són els contractes intel·ligents?
-image: https://placeimg.com/800/450/tech
+image: https://enginyeriainformatica.cat/wp-content/uploads/2016/08/BLOCKCHAIN-TED.jpg
 date: 2999-12-31 # tbd
 start_time: 19:00h
 end_time: 21:00h

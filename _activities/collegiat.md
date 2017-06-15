@@ -1,7 +1,7 @@
 ---
 layout: activity
 title:  "Defensa la professió"
-image: "https://enginyeriainformatica.cat/wp-content/uploads/2012/05/informaTICs-LOGO-01-b.png"
+image: "/assets/images/informaTICa_s.png"
 date:   2099-12-31
 ---
 

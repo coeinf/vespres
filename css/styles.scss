@@ -17,12 +17,15 @@ $icon-font-path: "../assets/fonts/bootstrap/";
 
 .navbar--coeinf {
   float: left;
+  display: block;
   margin-right: 13px;
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   height: 50px;
   background: rgba(255,255,255,0.3);
-
-  a {
+  &:hover {
+    margin-left: -15px;
+    padding-left: 15px;
+    background: rgba(0,0,0,0.1);
   }
 
   img {

@@ -1,7 +1,7 @@
 ---
 title: Alfonso Rubio-Manzanares
 image: https://enginyeriainformatica.cat/wp-content/uploads/2014/03/Alfonso-Rubio-Manzanares-150x200.jpg
-linkedin: https://www.linkedin.com/in/alfonsorubiomanzanares/?locale=es_ES
+linkedin: https://www.linkedin.com/in/alfonsorubiomanzanares/
 ---
 En la actualidad es 
 Presidente de www.barcelonaqbit.com 

@@ -83,7 +83,8 @@ Bio del Contributor/Ponent
 
           {% if page.linkedin %}
             <strong>LinkedIn</strong>: 
-              <a href="{{ page.linkedin }}" target="_blank">{{ page.linkedin }}</a>.
+              <a href="{{ page.linkedin }}" target="_blank">
+                {{ page.linkedin | split:'/' | last }}</a>.
             <br>
           {% endif %}
 

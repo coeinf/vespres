@@ -1,7 +1,7 @@
 ---
 layout: activity
 title:  "Defensa la professió"
-image: "/assets/images/informaTICa_s.png"
+image: "/assets/images/informaTICa_t.png"
 date:   2099-12-31
 ---
 

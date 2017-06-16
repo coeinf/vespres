@@ -7,7 +7,6 @@ end_time: 21:00h
 speakers: 
   - ana-freire
   - merce-escola
-  - david-rodenas
 venue: mobile-world-centre
 # level: advanced
 sponsors:

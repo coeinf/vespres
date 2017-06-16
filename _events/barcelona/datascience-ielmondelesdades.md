@@ -12,6 +12,7 @@ venue: mobile-world-centre
 # level: advanced
 sponsors:
   - mobile-world-centre
+rsvp: https://www.meetup.com/els-Vespres-del-Col-legi/events/240663058/
 # description: >
 #   Una descripció
 ---

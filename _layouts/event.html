@@ -52,6 +52,16 @@ layout: default
       </div>
     </div>
     <div class="col-md-4 col-md-offset-1">
+          
+      {% if _event_active %}
+      {% if page.rsvp %}
+      <a class="btn btn-primary btn-lg btn-block" target="_blank" 
+        href="{{ page.rsvp }}">
+        Apunta-t'hi
+      </a>
+      <br>
+      {% endif %}
+      {% endif %}
 
       {% comment %}QUAN{% endcomment %}
       <div class="panel panel-default">
@@ -72,7 +82,7 @@ layout: default
 
           <strong>Hora</strong>: 
             de {{ page.start_time }} a {{ page.end_time }}.
-          
+
         </div>
       </div>
       

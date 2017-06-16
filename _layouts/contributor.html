@@ -68,10 +68,12 @@ Bio del Contributor/Ponent
 
           <strong>Nom</strong>: {{ page.title }}.<br>
 
+          {% unless page %}
           {% if page.email %}
             <strong>Email</strong>: {{ page.email }}.
             <br>
           {% endif %}
+          {% endunless %}
 
           {% if page.website %}
             <strong>Website</strong>: 

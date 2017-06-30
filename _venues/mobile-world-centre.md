@@ -15,4 +15,4 @@ Just a Plaça Catalunya, entrant per Portal de l'Angel.
 - Mobile World Capital Barcelona: [www.mobileworldcapital.com](www.mobileworldcapital.com)
 - Movistar: [www.movistar.com](www.movistar.com)
 
-![MWCentre](/assets/images/sponsors/MWC-2017-logos-BLANCO-ok.jpg)
+![MWCentre](/assets/images/sponsors/MWC-2017-logos-BLANCO-ok_small.jpg)

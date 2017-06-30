@@ -10,3 +10,7 @@ sponsors:
 ---
 
 Just a Plaça Catalunya, entrant per Portal de l'Angel.
+
+- Mobile World Centre con enlace a www.mobileworldcentre.com
+- Mobile World Capital Barcelona con enlace a www.mobileworldcapital.com
+- Movistar con enlace a www.movistar.com

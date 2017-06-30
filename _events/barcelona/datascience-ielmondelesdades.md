@@ -1,7 +1,7 @@
 ---
 title: Data Science i el Món de les Dades
 image: https://enginyeriainformatica.cat/wp-content/uploads/2017/05/UOC-Data-Day-Barcelona.jpg
-date: 2017-07-29 # tbd
+date: 2017-06-29 # tbd
 start_time: 19:00h
 end_time: 21:00h
 speakers: 

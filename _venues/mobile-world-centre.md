@@ -11,6 +11,8 @@ sponsors:
 
 Just a Plaça Catalunya, entrant per Portal de l'Angel.
 
-- Mobile World Centre con enlace a www.mobileworldcentre.com
-- Mobile World Capital Barcelona con enlace a www.mobileworldcapital.com
-- Movistar con enlace a www.movistar.com
+- Mobile World Centre: [www.mobileworldcentre.com](www.mobileworldcentre.com)
+- Mobile World Capital Barcelona: [www.mobileworldcapital.com](www.mobileworldcapital.com)
+- Movistar: [www.movistar.com](www.movistar.com)
+
+![MWCentre](/assets/images/sponsors/MWC-2017-logos-BLANCO-ok.jpg)

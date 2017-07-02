@@ -7,6 +7,9 @@ end_time: 21:00h
 speakers: 
   - ana-freire
   - merce-escola
+resources: 
+  - text: Presentation slides
+    url: https://www.slideshare.net/DavidRdenasPic/vespres
 venue: mobile-world-centre
 # level: advanced
 sponsors:

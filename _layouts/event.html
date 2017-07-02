@@ -63,6 +63,27 @@ layout: default
       {% endif %}
       {% endif %}
 
+      {% comment %}RESOURCES{% endcomment %}
+      {% if page.resources %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+         Recursos
+        </div>
+        <div class="panel-body">
+
+          {% for _resource in page.resources %}
+
+          <strong>{{ _resource.text }}</strong>: 
+            <a target="_blank" href="{{ _resource.url }}">{{ _resource.url }}</a>
+            <br>
+
+          {% endfor %}
+
+        </div>
+      </div>
+      {% endif %}
+      
       {% comment %}QUAN{% endcomment %}
       <div class="panel panel-default">
         <div class="panel-heading">

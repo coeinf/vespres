@@ -1,5 +1,5 @@
 ---
-title: Ana Maria Freire Veiga
+title: Ana Freire
 #email: albert-castellana@example.com
 image: /assets/images/contributors/ana-freire.jpg
 website: https://www.upf.edu/web/etic/entry/-/-/124493/409/ana-maria-freire

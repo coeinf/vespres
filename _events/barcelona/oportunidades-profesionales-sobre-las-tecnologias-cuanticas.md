@@ -8,6 +8,9 @@ date:   2017-09-27
 start_time: "19:00h"
 end_time: "21:00h"
 venue: coeic-hq
+sponsors:
+  - coeic
+#rsvp: https://www.meetup.com/els-Vespres-del-Col-legi/events/240663058/
 speakers:
   - alfonso-rubio-manzanares
 ---

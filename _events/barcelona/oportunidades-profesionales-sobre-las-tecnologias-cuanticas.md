@@ -10,7 +10,7 @@ end_time: "21:00h"
 venue: coeic-hq
 sponsors:
   - coeic
-#rsvp: https://www.meetup.com/els-Vespres-del-Col-legi/events/240663058/
+rsvp: https://www.meetup.com/els-Vespres-del-Col-legi/events/243456151/
 speakers:
   - alfonso-rubio-manzanares
 ---

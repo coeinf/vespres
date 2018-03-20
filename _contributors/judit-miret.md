@@ -2,7 +2,7 @@
 title: Judit Miret Gual
 #email: albert-castellana@example.com
 image: /assets/images/contributors/judit-miret.png
-#website: https://www.upf.edu/web/etic/entry/-/-/124493/409/ana-maria-freire
+linkedin: https://linkedin.com/in/juditmiretgual
 ---
 
 Judit es socia fundadora de In Movement!. Coach certificada por Richard Boyatzis y Daniel Goleman y por la International Coaching Federation como  Coach Sistémico y Coach de equipos. Certificada en Herramientas de Diagnóstico de Empresas tales como Team Diagnostic Assessment, Team Leadership Circle y Constelaciones Organizativas.

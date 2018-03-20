@@ -32,11 +32,11 @@ Vina a descobrir el programa “Liderar i ser Liderat: com gestionar aquesta dua
 
 
 Contingut de la Ponència:
-18:45 – 19:00 Introducció per part de Conxi Pérez
-19:00 - 20:20 
-Entrevista participativa amb Lukas Hohler (en anglès)
-Explicació del programa Liderar i ser Liderat 
-Viu la teva pròpia experiència i emportat una eina “posada” desprès de la sessió 
-20:20 – 20-40 Socialització
+- 18:45 – 19:00 Introducció per part de Conxi Pérez
+- 19:00 - 20:20  
+  Entrevista participativa amb Lukas Hohler (en anglès)  
+  Explicació del programa Liderar i ser Liderat  
+  Viu la teva pròpia experiència i emportat una eina “posada” desprès de la sessió  
+- 20:20 – 20-40 Socialització
 
 La entrevista la farà Judit Miret, experta en facilitació de conflictes i Ex-Directiva de Recursos Humans durant molts anys.

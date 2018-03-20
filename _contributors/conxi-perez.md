@@ -2,7 +2,7 @@
 title: Conxi Pérez Andreu
 #email: albert-castellana@example.com
 image: /assets/images/contributors/conxi-perez.png
-#website: https://www.upf.edu/web/etic/entry/-/-/124493/409/ana-maria-freire
+website: https://www.conxiperezandreu.com
 ---
 
 Conxi Pérez es socia fundadora de In movement!, 

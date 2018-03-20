@@ -18,7 +18,7 @@ venue: coeic-juntes
 sponsors:
   - in-movement
   - coeic
-rsvp: https://www.meetup.com/els-Vespres-del-Col-legi/
+rsvp: https://www.meetup.com/els-Vespres-del-Col-legi/events/248925598/
 # description: >
 #   Una descripció
 ---

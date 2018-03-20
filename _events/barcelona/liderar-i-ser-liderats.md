@@ -1,9 +1,9 @@
 ---
 title: Liderats i Ser Liderats
 image: /assets/images/talks/liderats-i-ser-liderats.jpg
-date: 2017-06-29 # tbd
-start_time: 19:00h
-end_time: 21:00h
+date: 2017-04-19 # tbd
+start_time: 18:40h
+end_time: 20:40h
 speakers: 
   - conxi-perez
   - judit-miret
@@ -37,6 +37,6 @@ Contingut de la Ponència:
 Entrevista participativa amb Lukas Hohler (en anglès)
 Explicació del programa Liderar i ser Liderat 
 Viu la teva pròpia experiència i emportat una eina “posada” desprès de la sessió 
-20:20 – 20-35 Socialització
+20:20 – 20-40 Socialització
 
 La entrevista la farà Judit Miret, experta en facilitació de conflictes i Ex-Directiva de Recursos Humans durant molts anys.

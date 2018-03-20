@@ -2,7 +2,7 @@
 title: Lukas Hohler
 #email: albert-castellana@example.com
 image: /assets/images/contributors/lukas-hohler.png
-#website: https://www.upf.edu/web/etic/entry/-/-/124493/409/ana-maria-freire
+linkedin: https://linkedin.com/in/lukas-hohler-16018252
 ---
 
 Lukas Hohler is M.A. Conflict Resolution, Diploma in Process-oriented Psychology,

@@ -1,7 +1,7 @@
 ---
 title: Liderats i Ser Liderats
 image: /assets/images/talks/liderats-i-ser-liderats.jpg
-date: 2017-04-19 # tbd
+date: 2018-04-19 # tbd
 start_time: 18:40h
 end_time: 20:40h
 speakers: 
